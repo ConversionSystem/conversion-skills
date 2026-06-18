@@ -1,10 +1,10 @@
 ---
 name: client
-description: Manage firewalled per-client agency workspaces under Clients/{slug}/ — onboard a new client, pull a strategist brief, log a client meeting, draft a deliverable, build a client report, run a health check, or archive and offboard. Triggers on phrases like onboard client, new client, client brief, log client meeting, draft for client, client report, client health, offboard client, archive client.
+description: Manage firewalled per-client agency workspaces under Clients/{slug}/ · onboard a new client, pull a strategist brief, log a client meeting, draft a deliverable, build a client report, run a health check, or archive and offboard. Triggers on phrases like onboard client, new client, client brief, log client meeting, draft for client, client report, client health, offboard client, archive client.
 ---
 
 # Conversion Client OS
-Run firewalled per-client workspaces under Clients/{slug}/ for agency delivery — onboarding, briefing, meeting logs, deliverables, reporting, health, and clean offboarding.
+Run firewalled per-client workspaces under Clients/{slug}/ for agency delivery · onboarding, briefing, meeting logs, deliverables, reporting, health, and clean offboarding.
 
 ## When to use
 - "Onboard {name} as a client" / "set up a new client" -> NEW (flow 1).
@@ -14,7 +14,7 @@ Run firewalled per-client workspaces under Clients/{slug}/ for agency delivery �
 - "Build the weekly/monthly report for {client}" -> REPORT (flow 5).
 - "How healthy is {client}" / "any at-risk accounts" -> HEALTH (flow 6).
 - "Offboard {client}" / "archive {client}" -> ARCHIVE (flow 7).
-- Skip this skill for non-client work (Solo/Team Pipeline, Projects, Content) — those route elsewhere.
+- Skip this skill for non-client work (Solo/Team Pipeline, Projects, Content) · those route elsewhere.
 
 ## Inputs
 - The active client (name or slug). If absent or ambiguous across existing slugs, ask once; never guess.
@@ -25,36 +25,36 @@ Run firewalled per-client workspaces under Clients/{slug}/ for agency delivery �
 ## Process
 Resolve the active client first. Match the requested name to exactly one existing `Clients/{slug}/`; on no match propose NEW; on multiple matches or ambiguity, ask once, else file the request to `Inbox/` and stop. Once resolved, treat that slug as the ONLY client folder you may open this turn.
 
-1. NEW — onboard a client
+1. NEW · onboard a client
    1. Derive a kebab-case `{slug}` from the legal/brand name (ISO-safe, lowercase). If `Clients/{slug}/` or `Clients/_archive/{slug}/` already exists, refuse as a duplicate and offer the existing folder.
    2. Run a short interview (ask only for gaps): who they are; mandate + the single success metric; their ICP; key people (names, roles, contact channel); commercials (scope, term, cadence); brand voice/constraints.
    3. Scaffold the workspace, every file `confidential:true` with universal frontmatter:
-      - `Clients/{slug}/CLAUDE.md` — firewall router: states "read/write only this folder; never open a sibling Clients/*", canonical map of the subtree, escalation contact.
-      - `Clients/{slug}/profile.md` — who/mandate/commercials/voice.
-      - `Clients/{slug}/goals.md` — per-client KPI ledger (append-only, exact columns below) seeded with the success metric as the first target row.
-      - `Clients/{slug}/context/` — `brand.md`, `stack.md`, `people.md`.
+      - `Clients/{slug}/CLAUDE.md` · firewall router: states "read/write only this folder; never open a sibling Clients/*", canonical map of the subtree, escalation contact.
+      - `Clients/{slug}/profile.md` · who/mandate/commercials/voice.
+      - `Clients/{slug}/goals.md` · per-client KPI ledger (append-only, exact columns below) seeded with the success metric as the first target row.
+      - `Clients/{slug}/context/` · `brand.md`, `stack.md`, `people.md`.
       - `Clients/{slug}/meetings/`, `work/`, `reports/`, `inbox/` (created as needed) and `Clients/{slug}/decisions.md`.
    4. Emit a one-screen report card: what was created, the mandate/metric, and the top 3 open questions.
-2. BRIEF — strategist context
+2. BRIEF · strategist context
    1. Read `profile.md`, the last 5–8 rows of `goals.md`, the 2–3 most recent `meetings/`, open actions, and `decisions.md`.
    2. Output one screen: mandate + success metric, latest numbers vs target (with confidence), recent decisions, what we owe vs what we're waiting on, and the next best action. No files written.
-3. LOG — capture a meeting
+3. LOG · capture a meeting
    1. Write `Clients/{slug}/meetings/YYYY-MM-DD-{kind}.md` (kind ∈ {call, kickoff, review, qbr, async}) with attendees, summary, raw notes.
    2. Extract decisions -> append to `decisions.md` (each with `source` + `confidence`). Extract our actions -> client task list; their commitments -> a "waiting-on" list. Extract any metrics -> append rows to `goals.md`.
    3. Surface follow-ups; any outbound (recap email/DM) is drafted `status:draft`, never sent.
-4. DRAFT — a deliverable
+4. DRAFT · a deliverable
    1. Create `Clients/{slug}/work/{deliverable-slug}/drafts/{name}-vN.md`, `status:draft`, `generated:true`, `confidential:true`.
    2. Compose from the active client's context + relevant `Library/playbooks/` and `Library/templates/` only. No facts, names, or assets from any other client.
    3. Note open questions/assumptions inline; leave publishing/sending to a human gate.
-5. REPORT — period report
+5. REPORT · period report
    1. Write `Clients/{slug}/reports/YYYY-Www.md` (weekly) or `YYYY-MM.md` (monthly), `generated:true`.
    2. Lead with numbers pulled from `goals.md` (current vs target, confidence). Then wins, work shipped, decisions, next period's plan.
    3. Flag every goal lacking a fresh ledger row (stale/no data) rather than inventing progress. Client-facing send stays a human gate.
-6. HEALTH — risk check
+6. HEALTH · risk check
    1. Score risk signals: stale metrics, missed/over-running deadlines, unanswered "waiting-on", flat/negative KPI trend, sentiment from recent `meetings/`, low touch cadence.
    2. Write/refresh `Clients/{slug}/reports/health.md` (`generated:true`) with a RAG status + top risks + recommended interventions.
-   3. Regenerate Ops rollups (pipeline/revenue) as `generated:true` aggregates; emit anonymized figures only — never expose one client's data inside another's view.
-7. ARCHIVE — offboard
+   3. Regenerate Ops rollups (pipeline/revenue) as `generated:true` aggregates; emit anonymized figures only · never expose one client's data inside another's view.
+7. ARCHIVE · offboard
    1. Run an offboarding checklist: outstanding deliverables, final report, access/credential handover, data export.
    2. Produce an ownership/export bundle so the client OS survives the agency: a portable copy of `Clients/{slug}/` plus an `EXPORT.md` explaining the structure and that the files are theirs to keep.
    3. Harvest anonymized lessons -> `Memory/lessons.md`; create a consent-flagged case-study candidate (`generated:true`, `status:draft`, requires client sign-off before any use).

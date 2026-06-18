@@ -3,6 +3,6 @@
   "owner": "ConversionSystem",
   "repo": "ConversionSystem/OS-AI",
   "plugins": [
-    { "name": "conversion-os", "source": "./", "description": "The Conversion OS: setup, memory, operator, optimizer, team, client, connector layer, and the workflow library." }
+    { "name": "conversion-os", "source": "./", "description": "Conversion OS. Setup, memory, operator, optimizer, team, client, the connector layer, and the workflow library. 44 skills." }
   ]
 }

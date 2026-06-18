@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Library/ — local rules
+# Library/ · local rules
 Purpose: the reusable, productizable kit. Playbooks, templates, prompts, styles.
 
 ## Read

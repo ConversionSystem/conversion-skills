@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Projects/ — local rules
+# Projects/ · local rules
 Purpose: internal initiatives & deliverables you build on your own assets.
 
 ## Read

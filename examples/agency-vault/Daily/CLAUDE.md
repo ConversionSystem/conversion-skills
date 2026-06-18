@@ -9,5 +9,5 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Daily/ — operating log
+# Daily/ · operating log
 One note per day. Durable facts route to their canonical home, not here.

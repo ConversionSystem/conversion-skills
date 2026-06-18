@@ -14,17 +14,17 @@ Assess the HEALTH of the pipeline (not just its data) and produce a forecast plu
 - Run pipeline-update first if the data is stale; this skill reads, it does not refresh.
 
 ## Inputs
-- `Pipeline/deals.md` — the deal list with stage, value, owner, source, and dates (the spine of the analysis).
-- `Pipeline/accounts/` — per-account context for the deals behind each claim.
-- `Pipeline/prospects/` — top-of-funnel context for source-mix and coverage reasoning.
-- `Memory/kpi-ledger.md` (Solo/Team) — prior pipeline-value, weighted-forecast, and win-rate rows for trend and baselines. Agency: read the ACTIVE client's `Clients/{slug}/goals.md` instead.
-- `Company/strategy.md` — the revenue target / quota to measure coverage against.
-- `Company/offers.md` — deal-size norms and expected sales-cycle length to judge aging and stalls.
-- `_system/config.md` — profile (Solo/Team vs Agency) and the active client when Agency.
+- `Pipeline/deals.md` · the deal list with stage, value, owner, source, and dates (the spine of the analysis).
+- `Pipeline/accounts/` · per-account context for the deals behind each claim.
+- `Pipeline/prospects/` · top-of-funnel context for source-mix and coverage reasoning.
+- `Memory/kpi-ledger.md` (Solo/Team) · prior pipeline-value, weighted-forecast, and win-rate rows for trend and baselines. Agency: read the ACTIVE client's `Clients/{slug}/goals.md` instead.
+- `Company/strategy.md` · the revenue target / quota to measure coverage against.
+- `Company/offers.md` · deal-size norms and expected sales-cycle length to judge aging and stalls.
+- `_system/config.md` · profile (Solo/Team vs Agency) and the active client when Agency.
 
 ## Process
 1. **Resolve profile and target.** Read `_system/config.md`. If Agency, confirm the ACTIVE client and operate only inside `Clients/{slug}/`; never read a sibling client. Pull the revenue target / quota for the period from `Company/strategy.md` (Agency: `Clients/{slug}/context/strategy.md`). If no target is recorded, state that coverage cannot be scored and flag it as a finding.
-2. **Load the deals.** Read `Pipeline/deals.md` and the relevant `Pipeline/accounts/` files (Agency: `Clients/{slug}/pipeline/`). Build the working set: for each open deal capture stage, value, owner, source, created date, last-activity date, and expected close date. Note any deal missing a field — do not guess values; mark it "incomplete" and exclude from quantitative claims while listing it as a data-quality gap.
+2. **Load the deals.** Read `Pipeline/deals.md` and the relevant `Pipeline/accounts/` files (Agency: `Clients/{slug}/pipeline/`). Build the working set: for each open deal capture stage, value, owner, source, created date, last-activity date, and expected close date. Note any deal missing a field · do not guess values; mark it "incomplete" and exclude from quantitative claims while listing it as a data-quality gap.
 3. **Coverage vs target.** Sum open pipeline value and compute coverage ratio (open pipeline ÷ remaining target for the period). Compare against a healthy band (state the band you use, e.g. 3x). Call out whether there is enough pipeline to credibly hit the number.
 4. **Stage-by-stage conversion.** Count deals and value by stage. Where the ledger holds prior win-rate and stage history, compute stage-to-stage conversion and identify the worst-converting step. If history is thin, say so and report current stage distribution only, marked confidence:inferred.
 5. **Aging and stalls.** Flag deals whose time-in-stage or days-since-last-activity exceeds the expected sales-cycle norm from `Company/offers.md` (state the threshold). List the specific stalled deals by name with their idle days and owner.
@@ -36,11 +36,11 @@ Assess the HEALTH of the pipeline (not just its data) and produce a forecast plu
 11. **Append ledger rows.** Add APPEND-ONLY rows to `Memory/kpi-ledger.md` (Agency: `Clients/{slug}/goals.md`) for `pipeline-value`, `weighted-forecast`, and `win-rate`, each with `source: {date}-pipeline-review.md` and a confidence value. Never edit or reorder existing rows.
 
 ## Outputs
-- `Operations/reviews/{date}-pipeline-review.md` (Agency: `Clients/{slug}/operations/reviews/{date}-pipeline-review.md`) — `type: review`, `generated:true`, containing: coverage vs target, stage-by-stage conversion, aging/stalls list, weighted forecast (best-case / weighted / commit), concentration risk, source mix, and the three highest-leverage actions — each claim citing the deals behind it.
+- `Operations/reviews/{date}-pipeline-review.md` (Agency: `Clients/{slug}/operations/reviews/{date}-pipeline-review.md`) · `type: review`, `generated:true`, containing: coverage vs target, stage-by-stage conversion, aging/stalls list, weighted forecast (best-case / weighted / commit), concentration risk, source mix, and the three highest-leverage actions · each claim citing the deals behind it.
 - Ledger rows appended to `Memory/kpi-ledger.md` (Agency: `Clients/{slug}/goals.md`), exact columns `| date | metric | baseline | current | target | source | confidence | note |`:
-  - `pipeline-value` — total open pipeline, current vs target, confidence per data completeness.
-  - `weighted-forecast` — probability-weighted forecast for the period.
-  - `win-rate` — observed close rate used in the forecast (confidence:inferred when history is thin).
+  - `pipeline-value` · total open pipeline, current vs target, confidence per data completeness.
+  - `weighted-forecast` · probability-weighted forecast for the period.
+  - `win-rate` · observed close rate used in the forecast (confidence:inferred when history is thin).
 
 ## Guardrails
 - DIAGNOSIS, NOT MUTATION: read-only on pipeline data. Never edit `Pipeline/deals.md`, change a deal's stage, contact a prospect, or send anything. The output is a draft review for a human.

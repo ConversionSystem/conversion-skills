@@ -9,7 +9,7 @@ source: ops
 generated: false
 ---
 
-# Automation — {{name}}
+# Automation · {{name}}
 Goal: <!-- the manual work this removes + hours saved -->
 Trigger / cadence: <!-- event or schedule -->
 Connectors: <!-- which tools (register in _system/connectors.md) -->

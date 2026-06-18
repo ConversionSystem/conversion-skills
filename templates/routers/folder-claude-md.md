@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# {{Folder}}/ — local rules
+# {{Folder}}/ · local rules
 Purpose: {{one-line purpose of this folder}}. Keep this file <=60 lines.
 
 ## Read
@@ -23,4 +23,4 @@ Purpose: {{one-line purpose of this folder}}. Keep this file <=60 lines.
 - {{the hard rules for this folder, e.g. never hand-edit generated rollups}}
 
 ## Hand-off
-- {{where related facts route instead — the canonical home per the root router}}
+- {{where related facts route instead · the canonical home per the root router}}

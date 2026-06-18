@@ -13,12 +13,12 @@ Plan marketing content grounded in the company's strategy, ICP pains, and recent
 - A periodic content cadence (monthly/quarterly) is due and you want themes, formats, and cadence proposed from the ledger, not from vibes.
 
 ## Inputs
-- `Company/strategy.md` — current go-to-market strategy and priorities.
-- `Company/icp.md` — ICP pains, triggers, objections, and language.
-- `Company/brand.md` — positioning, messaging pillars, do/don't.
-- `Library/styles/brand-voice.md` — tone and voice constraints for any drafted copy.
-- `Memory/kpi-ledger.md` — the top-of-funnel KPI history and any per-piece performance rows.
-- Recent `Content/{slug}-{date}/` directories — past briefs and `data/` to read what worked and what did not.
+- `Company/strategy.md` · current go-to-market strategy and priorities.
+- `Company/icp.md` · ICP pains, triggers, objections, and language.
+- `Company/brand.md` · positioning, messaging pillars, do/don't.
+- `Library/styles/brand-voice.md` · tone and voice constraints for any drafted copy.
+- `Memory/kpi-ledger.md` · the top-of-funnel KPI history and any per-piece performance rows.
+- Recent `Content/{slug}-{date}/` directories · past briefs and `data/` to read what worked and what did not.
 - Optional user input: time window, channel focus, piece count, or campaign theme.
 
 ## Process
@@ -33,9 +33,9 @@ Plan marketing content grounded in the company's strategy, ICP pains, and recent
 
 ## Outputs
 - One directory per chosen piece under `Content/{slug}-{date}/`, each containing:
-  - `Content/{slug}-{date}/brief.md` — the content brief with universal frontmatter (`type:content-brief`, `status:draft`, `owner`, `date`, `reviewed`, `tags` >=2, `confidential`, `source`, `generated:false`), the theme, the ICP pain it answers, format, target, and how it will be measured.
-  - `Content/{slug}-{date}/data/baseline.json` — starting metric values and the measurement source for this piece.
-  - `Content/{slug}-{date}/final/` — empty directory for the eventual draft deliverable.
+  - `Content/{slug}-{date}/brief.md` · the content brief with universal frontmatter (`type:content-brief`, `status:draft`, `owner`, `date`, `reviewed`, `tags` >=2, `confidential`, `source`, `generated:false`), the theme, the ICP pain it answers, format, target, and how it will be measured.
+  - `Content/{slug}-{date}/data/baseline.json` · starting metric values and the measurement source for this piece.
+  - `Content/{slug}-{date}/final/` · empty directory for the eventual draft deliverable.
 - One appended row in `Memory/kpi-ledger.md` using the exact columns `| date | metric | baseline | current | target | source | confidence | note |`, recording the top-of-funnel KPI target for this plan, with `confidence` in {confirmed,reported,inferred,stale}.
 - A plan summary returned to the user: themes, formats, cadence, KPI, and per-piece targets.
 

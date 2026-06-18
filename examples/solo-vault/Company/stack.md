@@ -9,7 +9,7 @@ source: onboarding interview
 generated: false
 ---
 
-# Stack — where work happens (tools + owners only; no credentials)
+# Stack · where work happens (tools + owners only; no credentials)
 - Comms: Slack (client channels), Gmail.
 - Calls/notes: Google Meet + Fathom (transcripts).
 - CRM: a markdown `Pipeline/` board (this OS) + HubSpot free.

@@ -9,7 +9,7 @@ source: process
 generated: false
 ---
 
-# SOP — {{name}}
+# SOP · {{name}}
 Trigger: <!-- when to run this -->
 Inputs: <!-- files / tools needed -->
 Steps:

@@ -31,23 +31,23 @@ Capture a process once and turn it into a clear, runnable SOP that someone new c
 8. Review for runnability. Re-read the SOP as if you were new. Confirm every step has an actor, an action, and a destination. Fix gaps or escalate open questions to the contact in `_system/config.md`.
 
 ## Outputs
-- `Operations/sops/{slug}.md` — the SOP, with frontmatter and this body structure:
+- `Operations/sops/{slug}.md` · the SOP, with frontmatter and this body structure:
   - `# {SOP display name}`
-  - `**Trigger:**` one line — the event, schedule, or request that starts it.
+  - `**Trigger:**` one line · the event, schedule, or request that starts it.
   - `**Owner:**` the responsible person or `Team/{person}/`.
-  - `## Inputs` — files, data, and tools needed before starting.
-  - `## Steps` — numbered, imperative, each with exact paths and tools; automation candidates flagged inline.
-  - `## Output` — what it produces and the exact canonical path it is filed to.
+  - `## Inputs` · files, data, and tools needed before starting.
+  - `## Steps` · numbered, imperative, each with exact paths and tools; automation candidates flagged inline.
+  - `## Output` · what it produces and the exact canonical path it is filed to.
   - Frontmatter keys: `type: sop` · `status` · `owner` · `date` · `reviewed` · `tags` (>=2) · `confidential` · `source` · `generated: false`.
 - A one-line cross-link added to the owning folder's `CLAUDE.md` or `README.md` pointing at the new SOP.
 - If the SOP emits a metric: a note in its `## Output` that the metric is appended to `Memory/kpi-ledger.md` (append-only; never edit prior rows).
 - If no suitable router exists for the cross-link: a short note dropped in `Inbox/` flagging the missing link.
 
 ## Guardrails
-- Never autonomously execute the process you are documenting — this skill writes the SOP, it does not run it.
+- Never autonomously execute the process you are documenting · this skill writes the SOP, it does not run it.
 - Steps that send, publish, delete, contact clients, change pricing, or edit permissions must be written with a human-approval gate; outbound artifacts are drafted at `status: draft` and escalated to the contact in `_system/config.md`.
 - Agency firewall: when documenting a client process, never read sibling `Clients/{slug}/` folders; keep the SOP inside the owning client's scope or in `Operations/sops/` with no cross-client detail.
-- Route facts to canonical homes; do not duplicate company or client facts into the SOP — link to them.
+- Route facts to canonical homes; do not duplicate company or client facts into the SOP · link to them.
 - Use kebab-case slugs and ISO dates. Keep the SOP under the 150-line context budget.
 - Flag automation candidates only; do not create Operator routines or connectors from this skill.
 

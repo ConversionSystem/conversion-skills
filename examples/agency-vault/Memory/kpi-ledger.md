@@ -8,7 +8,7 @@ source: multiple
 generated: false
 ---
 
-# Firm KPI Ledger — append-only
+# Firm KPI Ledger · append-only
 
 | date | metric | baseline | current | target | source | confidence | note |
 |------|--------|----------|---------|--------|--------|------------|------|

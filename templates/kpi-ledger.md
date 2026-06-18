@@ -8,7 +8,7 @@ source: multiple
 generated: false
 ---
 
-# KPI Ledger — append-only
+# KPI Ledger · append-only
 <!-- One row per metric moved. NEVER edit/reorder prior rows. confidence ∈ {confirmed, reported, inferred, stale} -->
 
 | date | metric | baseline | current | target | source | confidence | note |

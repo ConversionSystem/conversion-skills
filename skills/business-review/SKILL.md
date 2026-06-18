@@ -1,6 +1,6 @@
 ---
 name: business-review
-description: Roll up a monthly or quarterly KPI scorecard with by-area movement, narrative, and next moves — run when someone says business review, monthly review, quarterly review, KPI rollup, or how are we tracking against targets.
+description: Roll up a monthly or quarterly KPI scorecard with by-area movement, narrative, and next moves · run when someone says business review, monthly review, quarterly review, KPI rollup, or how are we tracking against targets.
 ---
 
 # Business Review
@@ -14,43 +14,43 @@ Turn the KPI ledger into a period scorecard that makes the compounding visible: 
 
 ## Inputs
 - Period to cover (month or quarter). If not supplied, confirm it before reading anything.
-- `Memory/kpi-ledger.md` — the whole file, every row (append-only source of truth).
-- `Company/strategy.md` — current priorities and targets to score against.
+- `Memory/kpi-ledger.md` · the whole file, every row (append-only source of truth).
+- `Company/strategy.md` · current priorities and targets to score against.
 - Recent `Memory/decisions/` entries relevant to the period (what was decided and why).
 - Deliverables' `data/baseline.json` snapshots under `Projects/{slug}/` and `Content/{slug}-{date}/` (what each piece of work actually moved).
 - The previous review's snapshot, `Operations/reviews/{prev-date}-business-review/data/baseline.json`, if one exists (for the trend lead).
 
 ## Process
 
-### Phase 1 — LOAD
+### Phase 1 · LOAD
 1. Confirm the period with the user (e.g. `2026-05` for a month or `2026-Q2` for a quarter). Do not proceed until it is fixed; this date drives every output path.
-2. Read the entire `Memory/kpi-ledger.md`. Note every metric, its latest `current`, `target`, `source`, and `confidence`. Never skim — the rollup must trace to real rows.
+2. Read the entire `Memory/kpi-ledger.md`. Note every metric, its latest `current`, `target`, `source`, and `confidence`. Never skim · the rollup must trace to real rows.
 3. Read `Company/strategy.md` for the active priorities and targets each metric is judged against.
-4. Read the relevant `Memory/decisions/` entries for the period — these explain why numbers moved.
+4. Read the relevant `Memory/decisions/` entries for the period · these explain why numbers moved.
 5. Read each deliverable's `data/baseline.json` under `Projects/` and `Content/` to attribute movement to specific work.
 6. If a prior review snapshot exists, load its `data/baseline.json` so the report can lead with the trend versus last time.
 
-### Phase 2 — ROLL-UP
-7. Build the **SCORECARD**: one table, every metric, columns `metric | baseline | current | target | period delta | direction | source row`. Direction is `on-track`, `behind`, or `regressed`. Every value traces to a real ledger row — never invent a number. If a metric has no fresh row, mark it `stale` and say so; do not fabricate.
+### Phase 2 · ROLL-UP
+7. Build the **SCORECARD**: one table, every metric, columns `metric | baseline | current | target | period delta | direction | source row`. Direction is `on-track`, `behind`, or `regressed`. Every value traces to a real ledger row · never invent a number. If a metric has no fresh row, mark it `stale` and say so; do not fabricate.
 8. Write **BY-AREA** across acquisition, conversion, retention, content, and pipeline: for each area, what moved and why, citing the specific deliverable(s) (path-referenced) that drove it.
-9. Write the **NARRATIVE**: exactly three evidence-linked wins (each tied to a metric and a deliverable), what stalled, and an honest read — lead with what is behind, not what looks good.
+9. Write the **NARRATIVE**: exactly three evidence-linked wins (each tied to a metric and a deliverable), what stalled, and an honest read · lead with what is behind, not what looks good.
 10. Write **DO-NEXT**: exactly three highest-leverage moves. Each names a measurable goal (a specific metric and target) and a concrete Conversion OS skill to run to get there.
 11. If a prior snapshot exists, open the report with the trend versus last review (which metrics improved, held, or regressed since the last snapshot) before the scorecard.
 12. Write the report to `Operations/reviews/{date}-business-review/{date}-business-review.md` with `generated: true` in frontmatter. Write the snapshot `data/baseline.json` beside it as the artifact the next review diffs against.
 13. Append a one-line entry to today's `Daily/YYYY-MM-DD.md` noting the review was generated and the headline read.
 
 ## Outputs
-- `Operations/reviews/{date}-business-review/{date}-business-review.md` — the generated review (`generated: true`); sections in order: TREND (re-run only), SCORECARD, BY-AREA, NARRATIVE, DO-NEXT.
-- `Operations/reviews/{date}-business-review/data/baseline.json` — the period snapshot the next review diffs against.
-- One appended line in `Daily/YYYY-MM-DD.md` — Daily Activity entry: review generated + headline.
-- No rows added to `Memory/kpi-ledger.md` — the ledger is read here, never written.
+- `Operations/reviews/{date}-business-review/{date}-business-review.md` · the generated review (`generated: true`); sections in order: TREND (re-run only), SCORECARD, BY-AREA, NARRATIVE, DO-NEXT.
+- `Operations/reviews/{date}-business-review/data/baseline.json` · the period snapshot the next review diffs against.
+- One appended line in `Daily/YYYY-MM-DD.md` · Daily Activity entry: review generated + headline.
+- No rows added to `Memory/kpi-ledger.md` · the ledger is read here, never written.
 
 ## Guardrails
 - Reads only, with three exceptions: its own report file, its own `data/baseline.json`, and the one-line Daily Activity entry. Touch nothing else.
 - Never edit, reorder, or append to `Memory/kpi-ledger.md`. Never hand-edit any `generated: true` rollup.
-- Every scorecard number must trace to a real ledger row. If it cannot be traced, mark it `stale` and surface the gap — never invent or estimate a figure.
+- Every scorecard number must trace to a real ledger row. If it cannot be traced, mark it `stale` and surface the gap · never invent or estimate a figure.
 - Lead with what is behind. The honest read is the point; do not bury regressions under wins.
-- Respect the Agency firewall — read only the active vault context; never read sibling `Clients/{slug}/` data into a shared review.
+- Respect the Agency firewall · read only the active vault context; never read sibling `Clients/{slug}/` data into a shared review.
 - Frontmatter on the report carries the universal keys with `generated: true`; the report is regenerated on re-run, never patched by hand.
 
 ## References

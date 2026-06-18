@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Company/ — local rules
+# Company/ · local rules
 Purpose: our firms identity. Never put client material here.
 
 ## Write

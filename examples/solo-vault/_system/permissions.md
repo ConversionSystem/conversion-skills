@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# _system/permissions.md — access control
+# _system/permissions.md · access control
 
 Solo profile: single owner, full access. This file becomes meaningful on the
 Team/Agency profiles, where it pairs with storage-layer ACLs (shared-drive /

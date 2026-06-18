@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# _system/connectors.md — connector registry
+# _system/connectors.md · connector registry
 
 No connectors are wired yet (zero-infra default). Add one row per connector.
 Credentials live in a secret manager, NOT here.

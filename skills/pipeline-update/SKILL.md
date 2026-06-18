@@ -15,13 +15,13 @@ Refresh the sales pipeline from new inputs, recompute totals, log outcomes and l
 - When the user asks to "update the pipeline", "refresh deals", "log a closed deal", or "what's stalled".
 
 ## Inputs
-- `Pipeline/deals.md` — the canonical deal register (read first).
-- `Pipeline/accounts/` — account context files.
-- `Pipeline/prospects/` — existing prospect files (`{slug}.md`).
+- `Pipeline/deals.md` · the canonical deal register (read first).
+- `Pipeline/accounts/` · account context files.
+- `Pipeline/prospects/` · existing prospect files (`{slug}.md`).
 - New info from one of: a CRM export (CSV/paste), call notes, or direct user input.
-- `Memory/kpi-ledger.md` — for prior pipeline-value rows and trend context.
-- `_system/config.md` — escalation contact for any outreach drafts.
-- `_system/rules.md` — routing and frontmatter conventions.
+- `Memory/kpi-ledger.md` · for prior pipeline-value rows and trend context.
+- `_system/config.md` · escalation contact for any outreach drafts.
+- `_system/rules.md` · routing and frontmatter conventions.
 
 ## Process
 1. **Load state.** Read `Pipeline/deals.md`, scan `Pipeline/accounts/` and `Pipeline/prospects/` for the deals and accounts referenced. Note current stage, value, owner, next-step, and last-touch date for each open deal.
@@ -48,7 +48,7 @@ Refresh the sales pipeline from new inputs, recompute totals, log outcomes and l
 
 ## Guardrails
 - Human-approval gate: NEVER autonomously send, publish, email, or contact a prospect. All outreach is `status: draft` and escalated to the `_system/config.md` contact.
-- `Memory/kpi-ledger.md` is APPEND-ONLY — never edit or reorder prior rows; only append new ones with the exact column set.
+- `Memory/kpi-ledger.md` is APPEND-ONLY · never edit or reorder prior rows; only append new ones with the exact column set.
 - Generated rollups carry `generated: true` and are never hand-edited.
 - Every `.md` written carries universal frontmatter (type, status, owner, date, reviewed, tags >=2, confidential, source, generated).
 - Agency firewall: only read the active client's pipeline; never read sibling `Clients/{slug}/` data. If an input is ambiguous or unroutable, send it to `Inbox/` instead of guessing.

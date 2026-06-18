@@ -9,7 +9,7 @@ source: process
 generated: false
 ---
 
-# Workflow — {{name}}
+# Workflow · {{name}}
 Trigger: <!-- when this runs / who invokes it -->
 Inputs: <!-- files + connectors -->
 Steps:

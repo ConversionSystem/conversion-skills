@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Conversion OS — Root Router
+# Conversion OS · Root Router
 Product: Conversion OS by Conversion System. Profile: {{solo|team|agency}}.
 Read this file fully at the start of every session. Keep it <=150 lines.
 

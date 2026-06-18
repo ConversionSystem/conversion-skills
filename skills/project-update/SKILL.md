@@ -1,6 +1,6 @@
 ---
 name: project-update
-description: Refreshes a project's brief status acceptance and baseline, logs progress, appends ledger rows for moved metrics, surfaces blockers and the next step, and hands off published work — invoked by "update project", "project update", "log project progress", or "refresh project status".
+description: Refreshes a project's brief status acceptance and baseline, logs progress, appends ledger rows for moved metrics, surfaces blockers and the next step, and hands off published work · invoked by "update project", "project update", "log project progress", or "refresh project status".
 ---
 
 # Project Update
@@ -14,11 +14,11 @@ Refresh a `Projects/{slug}/` with current status, progress, and moved metrics, t
 - A decision was made mid-project that future work depends on.
 
 ## Inputs
-- `slug` — the kebab-case project folder under `Projects/{slug}/` (required).
+- `slug` · the kebab-case project folder under `Projects/{slug}/` (required).
 - What changed since last update: progress notes, new metric readings, blockers, decisions, published assets (provided by the user or read from the working session).
-- `Projects/{slug}/brief.md` — current status, acceptance criteria, owner.
-- `Projects/{slug}/data/baseline.json` — current tracked numbers (created on first update if absent).
-- `Memory/kpi-ledger.md` — append target for moved metrics.
+- `Projects/{slug}/brief.md` · current status, acceptance criteria, owner.
+- `Projects/{slug}/data/baseline.json` · current tracked numbers (created on first update if absent).
+- `Memory/kpi-ledger.md` · append target for moved metrics.
 
 ## Process
 1. **Locate and read.** Open `Projects/{slug}/brief.md`. If the folder does not exist, stop and route the request to `Inbox/` for triage rather than guessing the slug. Read existing `data/baseline.json` if present.
@@ -31,16 +31,16 @@ Refresh a `Projects/{slug}/` with current status, progress, and moved metrics, t
 8. **Record decisions.** For any decision made during the update, write `Memory/decisions/{date}-{topic}.md` with the decision, rationale, and owner, and reference it from the brief.
 
 ## Outputs
-- `Projects/{slug}/brief.md` — updated frontmatter (`status`, `date`, `reviewed`), refreshed acceptance criteria, appended progress log, blockers, and next step.
-- `Projects/{slug}/data/baseline.json` — current numbers with as-of date (created if absent).
-- `Memory/kpi-ledger.md` — one appended row per moved metric, exact columns, confidence set.
-- `Memory/decisions/{date}-{topic}.md` — one file per decision made (only if a decision occurred).
-- `Content/{slug}-{date}/brief.md` — handoff record (only if the project published an asset).
+- `Projects/{slug}/brief.md` · updated frontmatter (`status`, `date`, `reviewed`), refreshed acceptance criteria, appended progress log, blockers, and next step.
+- `Projects/{slug}/data/baseline.json` · current numbers with as-of date (created if absent).
+- `Memory/kpi-ledger.md` · one appended row per moved metric, exact columns, confidence set.
+- `Memory/decisions/{date}-{topic}.md` · one file per decision made (only if a decision occurred).
+- `Content/{slug}-{date}/brief.md` · handoff record (only if the project published an asset).
 
 ## Guardrails
 - Never autonomously send, publish, delete, contact clients, change pricing, or edit permissions; outbound or publish-bound work is written `status:draft` and escalated to the `_system/config.md` contact.
 - KPI ledger is append-only: never edit, reorder, or delete prior rows; one row per moved metric only.
-- No placeholder files and no empty sections — omit anything with no real content.
+- No placeholder files and no empty sections · omit anything with no real content.
 - Route facts to their canonical homes; if the project belongs to a client, respect the agency firewall and never read sibling `Clients/{slug}/` folders.
 - Use kebab-case slugs and ISO dates. Keep folder context files within size budgets.
 - Generated rollups are never hand-edited; only update files this workflow owns.

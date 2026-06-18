@@ -7,5 +7,5 @@ tags: [router, pipeline]
 confidential: false
 source: Conversion OS Setup
 generated: false
----# Pipeline/ — sales context
+---# Pipeline/ · sales context
 Deals in deals.md; append pipeline metrics to the ledger.

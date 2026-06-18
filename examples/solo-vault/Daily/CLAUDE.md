@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Daily/ — local rules
+# Daily/ · local rules
 Purpose: the operating log. One note per day; weekly reviews.
 
 ## Read

@@ -9,7 +9,7 @@ source: onboarding
 generated: false
 ---
 
-# Offer — {{name}}
+# Offer · {{name}}
 What it is: <!-- one sentence -->
 Who it's for: <!-- ICP segment -->
 Price: {{price}} · Model: {{one-time|monthly|usage}}

@@ -9,7 +9,7 @@ source: onboarding
 generated: false
 ---
 
-# Ideal Customer Profile — {{segment}}
+# Ideal Customer Profile · {{segment}}
 Who: <!-- role, company stage/size -->
 Pain: <!-- the expensive problem -->
 Trigger: <!-- what makes them buy now -->

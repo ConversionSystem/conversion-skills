@@ -1,6 +1,6 @@
 ---
 name: ads-audit
-description: Audit a paid-ads account or set of campaigns for waste and lift from a CSV export or a described setup, producing a prioritized findings report — triggers on "audit my ads", "ads audit", "Google Ads audit", "Meta ads audit", "LinkedIn ads audit", "where am I wasting ad spend", "why is my ROAS low".
+description: Audit a paid-ads account or set of campaigns for waste and lift from a CSV export or a described setup, producing a prioritized findings report · triggers on "audit my ads", "ads audit", "Google Ads audit", "Meta ads audit", "LinkedIn ads audit", "where am I wasting ad spend", "why is my ROAS low".
 ---
 
 # Ads Audit
@@ -34,18 +34,18 @@ Audit a paid-ads account or set of campaigns (Google, Meta, or LinkedIn) for was
 8. **Creative diversity and fatigue.** Count active ads/variants per ad group or ad set, check format coverage, and look for fatigue signals (rising frequency with falling CTR, flat or declining performance on aged creative). Flag thin variant counts, single-format reliance, and stale top spenders. Judge messaging against offer and brand voice.
 9. **Conversion tracking.** Verify conversion actions exist and look sane: primary vs secondary actions, duplicate or double-counted conversions, missing values, attribution window, and obvious gaps (spend with zero tracked conversions). Flag any campaign spending with no measurable outcome.
 10. **Landing-page match and wasted spend.** Check that ad destinations align with ad/keyword intent and the offer (message match, relevance, mobile fit where observable). Identify wasted spend: zero-conversion search terms or placements, irrelevant queries, converting-poorly segments, and spend on paused/irrelevant destinations. Sum estimated wasted spend with its basis.
-11. **Score, prioritize, and write the report.** For each finding record: `issue · severity (high/medium/low) · evidence (with source) · fix · est. impact`. Sort by severity then estimated impact. Write `final/ads-audit-{platform}-{date}.md` with universal frontmatter (`status:draft`, `generated:true`), an executive summary, the baselines table, and the prioritized findings table. List the top fixes as a recommended action order. Never propose changes you would apply yourself — every fix is a human decision.
-12. **Append the ledger.** Add APPEND-ONLY rows to `Memory/kpi-ledger.md` (Solo/Team) or `Clients/{slug}/goals.md` (Agency) for the baselines you established — e.g. `wasted-spend`, `cac`/`cpa`, `roas`, `ctr`, `conversion-rate` — one row each, using the exact columns and a `confidence` of `confirmed` (from export) or `reported` (from described setup). Never edit or reorder prior rows.
+11. **Score, prioritize, and write the report.** For each finding record: `issue · severity (high/medium/low) · evidence (with source) · fix · est. impact`. Sort by severity then estimated impact. Write `final/ads-audit-{platform}-{date}.md` with universal frontmatter (`status:draft`, `generated:true`), an executive summary, the baselines table, and the prioritized findings table. List the top fixes as a recommended action order. Never propose changes you would apply yourself · every fix is a human decision.
+12. **Append the ledger.** Add APPEND-ONLY rows to `Memory/kpi-ledger.md` (Solo/Team) or `Clients/{slug}/goals.md` (Agency) for the baselines you established · e.g. `wasted-spend`, `cac`/`cpa`, `roas`, `ctr`, `conversion-rate` · one row each, using the exact columns and a `confidence` of `confirmed` (from export) or `reported` (from described setup). Never edit or reorder prior rows.
 
 ## Outputs
-- `Projects/ads-audit-{platform}-{date}/brief.md` (Solo/Team) or `Clients/{slug}/work/ads-audit-{platform}-{date}/brief.md` (Agency) — scope, date range, objective, inputs, sources.
-- `…/final/ads-audit-{platform}-{date}.md` — the prioritized findings report (executive summary, baselines table, findings table of issue · severity · evidence · fix · est. impact, recommended action order), `status:draft`, `generated:true`, `confidential:true` for Agency.
+- `Projects/ads-audit-{platform}-{date}/brief.md` (Solo/Team) or `Clients/{slug}/work/ads-audit-{platform}-{date}/brief.md` (Agency) · scope, date range, objective, inputs, sources.
+- `…/final/ads-audit-{platform}-{date}.md` · the prioritized findings report (executive summary, baselines table, findings table of issue · severity · evidence · fix · est. impact, recommended action order), `status:draft`, `generated:true`, `confidential:true` for Agency.
 - Raw exports retained under `…/data/`.
 - Ledger rows appended to `Memory/kpi-ledger.md` (Solo/Team) or `Clients/{slug}/goals.md` (Agency): one APPEND-ONLY row per established baseline (e.g. wasted-spend, cac/cpa, roas, ctr, conversion-rate) with `source` and `confidence`.
 
 ## Guardrails
 - DRAFT-ONLY: this skill diagnoses and recommends. Never change budgets, bids, targeting, creative, or campaign status, and never connect to a platform to push changes. A human applies every fix.
-- PROVENANCE: cite the export filename or the described-setup note for every finding. Never invent metrics — if revenue, conversion values, or a field are missing, label the metric unavailable rather than estimating. Estimated impact must state its basis.
+- PROVENANCE: cite the export filename or the described-setup note for every finding. Never invent metrics · if revenue, conversion values, or a field are missing, label the metric unavailable rather than estimating. Estimated impact must state its basis.
 - VOICE: load brand voice before judging creative; assess messaging in the business's voice (Agency: the client's voice).
 - FIREWALL (Agency): operate only within the active client's `Clients/{slug}/` workspace; never read a sibling client; mark all outputs `confidential:true`.
 - CONNECTORS: ad-platform connectors are OPTIONAL. Default to provided exports or a described setup. Only use a connector if one is registered in `_system/connectors.md` and the user has enabled it, and even then only to READ.

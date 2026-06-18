@@ -5,7 +5,7 @@ description: Drafts a personalized testimonial or review request to a happy cust
 
 # Testimonial
 
-Turns proven results into a draft ask for proof, and turns received proof into a reusable, consent-flagged social-proof library — pulling the supporting numbers from the ledger, never inventing a quote.
+Turns proven results into a draft ask for proof, and turns received proof into a reusable, consent-flagged social-proof library · pulling the supporting numbers from the ledger, never inventing a quote.
 
 ## When to use
 - A KPI ledger row shows a real, attributable win for a customer (a metric moved, a baseline beaten, a target hit) and you want to draft an ask for a testimonial or review.
@@ -15,7 +15,7 @@ Turns proven results into a draft ask for proof, and turns received proof into a
 
 ## Inputs
 - The customer/client identity and the slug for routing (`{slug}`).
-- KPI ledger: `Memory/kpi-ledger.md` (Solo/Team) OR `Clients/{slug}/goals.md` (Agency) — for the result, baseline→current, source, and confidence backing the ask.
+- KPI ledger: `Memory/kpi-ledger.md` (Solo/Team) OR `Clients/{slug}/goals.md` (Agency) · for the result, baseline→current, source, and confidence backing the ask.
 - Voice: `Library/styles/brand-voice.md` + `Company/brand.md` (Solo/Team) OR `Clients/{slug}/context/brand.md` (Agency, the client's voice).
 - For assembly job: the raw received testimonial text (paste, email export, review screenshot transcript, or Inbox item) plus who said it, their role/company, and where it came from.
 - Profile (Solo/Team vs Agency) and active client, to set routing and confidentiality.
@@ -28,11 +28,11 @@ Turns proven results into a draft ask for proof, and turns received proof into a
 4. **Draft the request (REQUEST job).** Write a short, personalized message that: thanks them, names the specific result in their context (e.g. the metric that moved), makes one clear ask (a quote, a star review on a named platform, or a short reference call), offers to draft a starter quote they can edit, and gives an easy out. Keep it human and on-voice. Set `status: draft`. Route to:
    - Solo/Team: `Operations/tasks.md` reference + the draft saved under `Operations/` (e.g. `Operations/testimonial-requests/{slug}-{date}.md`).
    - Agency: `Clients/{slug}/testimonial-request-{date}.md` with `confidential: true`.
-   This is DRAFT-ONLY. Never send, email, or post it — a human ships it.
+   This is DRAFT-ONLY. Never send, email, or post it · a human ships it.
 5. **Capture the received proof (ASSEMBLE job).** Take the verbatim quote exactly as the customer wrote it. Do not edit, embellish, or merge quotes. Record: who said it, role + company, date received, source/channel, and any result they cite. Cross-check any number they mention against the ledger; if it matches, cite the ledger row, if it does not, keep the quote as-is but flag the figure as customer-reported, not vault-verified.
 6. **Set consent state (ASSEMBLE job).** Mark `consent: pending` until a human confirms the customer approved external use. Note the permission basis (e.g. "approved in email 2026-06-18" or "not yet asked"). Nothing here is cleared for publishing by this skill.
 7. **Assemble into the library.** Append the structured entry:
-   - Solo/Team (non-client): `Library/swipe/testimonials.md` — a running, reusable swipe bank, each entry with its quote, attribution, cited result + ledger source, and consent state.
+   - Solo/Team (non-client): `Library/swipe/testimonials.md` · a running, reusable swipe bank, each entry with its quote, attribution, cited result + ledger source, and consent state.
    - Agency (client proof): `Clients/{slug}/testimonials.md` (or the client's context folder) with `confidential: true` and `consent: pending`.
 8. **Update the ledger if a baseline/result is newly confirmed.** If the testimonial confirms or surfaces a metric not yet logged, APPEND a new row to the correct ledger (never edit prior rows) with `source` = the testimonial and an honest `confidence`.
 9. **Flag next step for the human.** End the draft/entry with a one-line note on what a person must do before any external use: send the request, or obtain consent and verify the figure.
@@ -42,7 +42,7 @@ Turns proven results into a draft ask for proof, and turns received proof into a
 - **Request draft (Agency):** `Clients/{slug}/testimonial-request-{date}.md` (`status: draft`, `confidential: true`).
 - **Social-proof entry (Solo/Team):** appended to `Library/swipe/testimonials.md` with attribution, cited result, ledger source, and `consent: pending` until cleared.
 - **Social-proof entry (Agency):** appended to `Clients/{slug}/testimonials.md` (`confidential: true`, `consent: pending`).
-- **Ledger row (optional):** one appended row in `Memory/kpi-ledger.md` (Solo/Team) or `Clients/{slug}/goals.md` (Agency) only if the testimonial confirms or sets a metric — exact columns `| date | metric | baseline | current | target | source | confidence | note |`, never editing prior rows.
+- **Ledger row (optional):** one appended row in `Memory/kpi-ledger.md` (Solo/Team) or `Clients/{slug}/goals.md` (Agency) only if the testimonial confirms or sets a metric · exact columns `| date | metric | baseline | current | target | source | confidence | note |`, never editing prior rows.
 - Every file carries universal frontmatter: `type · status · owner · date · reviewed · tags(>=2) · confidential · source · generated`.
 
 ## Guardrails
@@ -55,7 +55,7 @@ Turns proven results into a draft ask for proof, and turns received proof into a
 - Route outputs to canonical homes; kebab-case slugs; ISO dates.
 
 ## References
-- `Memory/kpi-ledger.md` and `Clients/{slug}/goals.md` — supporting results and append-only logging.
-- `Library/styles/brand-voice.md`, `Company/brand.md`, `Clients/{slug}/context/brand.md` — voice.
-- `_system/permissions.md`, `_system/rules.md` — consent and external-use rules.
-- `Operations/case-studies/` — downstream home for cleared, verified proof.
+- `Memory/kpi-ledger.md` and `Clients/{slug}/goals.md` · supporting results and append-only logging.
+- `Library/styles/brand-voice.md`, `Company/brand.md`, `Clients/{slug}/context/brand.md` · voice.
+- `_system/permissions.md`, `_system/rules.md` · consent and external-use rules.
+- `Operations/case-studies/` · downstream home for cleared, verified proof.

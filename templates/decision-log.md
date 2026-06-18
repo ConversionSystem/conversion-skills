@@ -10,7 +10,7 @@ confidence: confirmed
 generated: false
 ---
 
-# Decision — {{title}}
+# Decision · {{title}}
 Context: <!-- what prompted this -->
 Decision: <!-- what we chose -->
 Rationale: <!-- why; alternatives rejected -->

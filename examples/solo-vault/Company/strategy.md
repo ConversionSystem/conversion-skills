@@ -9,7 +9,7 @@ source: planning session
 generated: false
 ---
 
-# Strategy — Q3 2026
+# Strategy · Q3 2026
 North-star: reach $20k MRR by 2026-09-30 without adding >10 hrs/wk.
 Priorities:
 1. Convert the newsletter into 2 qualified calls/wk (top of funnel).

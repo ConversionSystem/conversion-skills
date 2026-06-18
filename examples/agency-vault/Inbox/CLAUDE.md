@@ -9,5 +9,5 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Inbox/ — universal capture; triage daily
+# Inbox/ · universal capture; triage daily
 Ambiguous client items stay here for human decision; never guessed into a client.

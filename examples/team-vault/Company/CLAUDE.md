@@ -7,5 +7,5 @@ tags: [router, company]
 confidential: false
 source: Conversion OS Setup
 generated: false
----# Company/ — local rules
+---# Company/ · local rules
 Purpose: identity + department charters under departments/.

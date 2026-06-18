@@ -9,6 +9,6 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Team/ — people, roles, access
+# Team/ · people, roles, access
 Each person has profile.md + access.md (drives scoping) + tasks.md.
 Scoping is paired with storage ACLs + the _system/audit/ trail.

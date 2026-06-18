@@ -9,6 +9,6 @@ source: onboarding
 generated: false
 ---
 
-# marco — access
+# marco · access
 role: contractor
 clients: [acme-robotics]

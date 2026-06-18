@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Inbox/ — local rules
+# Inbox/ · local rules
 Purpose: universal capture. Anything lands here; triage daily.
 
 ## Read

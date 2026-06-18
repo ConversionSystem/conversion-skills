@@ -1,56 +1,51 @@
 ---
 name: exec-dashboard
-description: Build a self-contained brand-colored HTML executive dashboard snapshot from the vault when you say generate exec dashboard, executive snapshot, KPI dashboard, or show me the numbers
+description: Build a self-contained brand HTML executive dashboard snapshot from the vault when you say generate exec dashboard, executive snapshot, KPI dashboard, or show me the numbers
 ---
 
 # Executive Dashboard
 
-Generate one self-contained, plugin-free HTML dashboard from the vault as a read-only point-in-time snapshot of KPIs, pipeline, recent decisions and meetings, and today's open Top 3.
+Render one self-contained, plugin-free HTML snapshot of where the business stands. KPIs as receipts, pipeline, recent decisions and meetings, today's Top 3. Read-only. Point-in-time. Conversion System brand.
 
 ## When to use
-- You want a single shareable HTML view of where the business stands right now.
-- Before a weekly review, board update, or stakeholder check-in.
-- After a batch of KPI ledger updates, to see current vs target at a glance.
-- Triggers: "generate exec dashboard", "executive snapshot", "KPI dashboard", "show me the numbers", "build the dashboard".
+- You want one shareable HTML view of the numbers right now.
+- Before a weekly review, a board update, or a client check-in.
+- After a batch of ledger updates, to see current against target at a glance.
+- Triggers: "generate exec dashboard", "executive snapshot", "KPI dashboard", "show me the numbers".
 
 ## Inputs
-- `Memory/kpi-ledger.md` — the append-only KPI ledger (required source for KPI cards).
-- `Pipeline/deals.md` — pipeline summary (Solo and Team modes; absent in Agency-only vaults).
-- `Memory/decisions/*.md` — recent decision records.
-- `Operations/meetings/*.md` — recent meeting notes.
-- `Daily/YYYY-MM-DD.md` — today's Daily note, for the open Top 3.
-- `_system/config.md` — brand colors (read for theming) and the escalation contact.
-- `Company/brand.md` — brand name and palette fallback if `_system/config.md` lacks colors.
+- `Memory/kpi-ledger.md` (Solo/Team) or `Clients/{slug}/goals.md` (Agency): the latest row per metric, with `source` and `date`.
+- `Pipeline/deals.md`, recent `Memory/decisions/`, recent `Operations/meetings/`, today's `Daily/YYYY-MM-DD.md` (Top 3).
+- `_system/config.md`: the business name and escalation contact.
+- `assets/brand-tokens.css`: the six colors and the two font stacks. The brand is fixed. Do not read colors from the vault.
 
 ## Process
-1. Resolve today's date as ISO `YYYY-MM-DD` from the environment. This is the snapshot date used in the filename, the header, and the "as of" stamp.
-2. Read brand colors from `_system/config.md` (fallback `Company/brand.md`); if none found, default to a neutral palette (primary `#1f2937`, accent `#2563eb`, ok `#16a34a`, warn `#d97706`, bad `#dc2626`). Never invent a brand name; use the configured one or "Conversion OS".
-3. KPI cards — read `Memory/kpi-ledger.md`. For each distinct `metric`, select the latest row by `date` (last matching row wins; never reorder or edit the ledger). For each metric build a card with: metric name, current, target, source, confidence badge, and a direction indicator computed only from `baseline` vs `current` (up/down/flat). If a metric has no ledger row, render its card as "no data". Never compute or fabricate values not present in the ledger.
-4. Pipeline summary — if `Pipeline/deals.md` exists, summarize counts and total value by stage (and any explicit totals already in the file). If the file is absent or empty, render the pipeline panel as "no data". Do not estimate amounts.
-5. Recent activity — list the most recent 3-5 entries from `Memory/decisions/` and the most recent 3-5 from `Operations/meetings/`, by file date. Show title, date, and one-line summary pulled from each file's frontmatter or first line. If a folder is empty, show "no recent items".
-6. Top 3 — open `Daily/{snapshot-date}.md` and extract the open Top 3 priorities. If today's Daily note is missing or has no Top 3, render "no Top 3 set for today" and note the missing file.
-7. Compose ONE HTML document with all CSS inline in a `<style>` block — no external stylesheets, fonts, scripts, or CDN links. Brand-color the header and accents. Lay out KPI cards as a responsive grid, then panels for Pipeline, Recent Decisions, Recent Meetings, and Top 3. Put a prominent banner stating this is a read-only point-in-time snapshot generated on the snapshot date, and that numbers reflect the ledger at generation time.
-8. Write the file to `Operations/reviews/dashboard-{snapshot-date}.html`. Mark provenance: embed an HTML comment header with `generated: true`, the source files read, and the generation timestamp.
-9. Optionally write a companion `Operations/reviews/dashboard-{snapshot-date}.md` with full universal frontmatter (`generated: true`) recording provenance, since the HTML itself cannot carry frontmatter. Keep it under the 60-line folder budget.
-10. Tell the user the snapshot is read-only and offer to refresh it by re-running the skill (which overwrites that date's file).
+1. Resolve profile and business name from `_system/config.md`. Agency: operate inside the active client only. Mark the file confidential if any source is.
+2. Read the latest row per metric (scan the ledger from the bottom). Read pipeline, recent decisions and meetings, and today's Top 3. Read only. Never write a source file.
+3. Compose ONE HTML document, all CSS inline in a `<style>` block. No external stylesheet, no script, no CDN. Inline the brand tokens:
+   - colors: Paper `#ffffff`, Ink `#0a0a0a`, Indigo `#1a0f6a`, Orange `#ff5a1f`, Solar `#ffd91a`, Cobalt `#1f4cff`, Paper-2 `#f4f4f0`, Mute `#8a8a8a`.
+   - fonts: `font-family:'Inter Tight',system-ui,sans-serif` for everything, `'JetBrains Mono',ui-monospace,monospace` for every number. Brand fonts first, system fallback, so it stays self-contained.
+4. Header: an Indigo bar carrying the wordmark `CONVERSION / SYSTEM` (slash in Orange, the rest Paper), the descriptor `an AI agency` in small caps, the business name, and the snapshot date in JetBrains Mono.
+5. Receipts band (Ink background): the 3 or 4 headline KPIs as receipts. A receipt is a big JetBrains Mono number, a one-line verb-context, and the named source with its date (the ledger row `source` and `date`). Names or it did not happen. Show current against target.
+6. KPI grid: every metric as a Paper-2 card. Big Mono number (current), target and direction under it, source and date as a Mono caption. Where a metric has no ledger row, print "no data". Never a guess.
+7. Panels: Pipeline (deal, stage, value), Recent decisions, Recent meetings, today's Top 3. Numbers in Mono. Links in Cobalt.
+8. Orange discipline: use Orange at most twice on the whole page. Spend it on the single most important number against target, and the one primary action. Everything else is Ink, Indigo, Mute.
+9. Snapshot banner: state in the page that this is a point-in-time view generated on the snapshot date, and that numbers reflect the ledger at generation time. Never present it as live.
+10. Write to `Operations/reviews/dashboard-{YYYY-MM-DD}.html`. Lead the file with an HTML comment carrying `generated: true`, the source files read, and the generation date.
 
 ## Outputs
-- `Operations/reviews/dashboard-{YYYY-MM-DD}.html` — self-contained brand-colored dashboard; provenance in a leading HTML comment with `generated: true`, source list, and timestamp.
-- `Operations/reviews/dashboard-{YYYY-MM-DD}.md` (optional companion) — universal frontmatter with `generated: true`, `type: dashboard-snapshot`, `source` listing the files read, and a one-line note that the HTML is the artifact.
-- No KPI ledger rows are written. This skill is read-only of the vault and appends nothing to `Memory/kpi-ledger.md`.
+- `Operations/reviews/dashboard-{YYYY-MM-DD}.html`: a self-contained brand dashboard, provenance in a leading HTML comment (`generated: true`, sources, date). Agency: confidential if any source is.
+- Optional `Operations/reviews/dashboard-{YYYY-MM-DD}.md` companion with universal frontmatter (`generated: true`, `type: dashboard-snapshot`, `source` list), under the 60-line folder budget.
+- No ledger writes. This skill reads.
 
 ## Guardrails
-- Read-only of the vault: never edit, reorder, or append to `Memory/kpi-ledger.md` or any source file; the only writes are the dashboard HTML and its optional companion `.md`.
-- Never invent numbers. Render "no data" for any metric without a ledger row, and "no data" for absent Pipeline/Daily/decisions/meetings sources.
-- Snapshot only: state clearly in the HTML and to the user that the dashboard is a point-in-time view; never present it as live.
-- Self-contained and plugin-free: inline CSS only, no external dependencies, no network calls, no JavaScript required to read it.
-- Agency firewall: include only the current scope's data; never read sibling `Clients/{slug}/` folders. If a source is ambiguous, skip it and note the gap rather than guessing; route genuinely unfiled facts to `Inbox/`.
-- Do not auto-send, publish, or share the dashboard. Sharing is a human-approval action; escalate to the contact in `_system/config.md` if distribution is requested.
-- Respect `confidential` data: the HTML inherits the sensitivity of its sources; flag it as confidential if any source is.
+- Read-only of the vault. The only writes are the dashboard HTML and its optional companion.
+- Snapshot only. Never present the dashboard as live.
+- Self-contained. Inline CSS only, no CDN, no script required to read it.
+- Brand is fixed. Six colors, two faces, the wordmark with the Orange slash. Orange at most twice. No em-dashes in any rendered copy.
+- Never invent a number. Print "no data" where a metric has no ledger row.
+- Respect `confidential`. The HTML inherits the sensitivity of its sources.
 
 ## References
-- `Memory/kpi-ledger.md` (append-only ledger; latest row per metric)
-- `Pipeline/deals.md`
-- `Memory/decisions/`, `Operations/meetings/`
-- `Daily/YYYY-MM-DD.md`
-- `_system/config.md` (brand colors, escalation contact)
+- `assets/brand-tokens.css` (the six colors, the two font stacks, the wordmark snippet)
+- `BRAND.md` (the brand source of truth)

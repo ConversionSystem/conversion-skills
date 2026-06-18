@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Content/ — local rules
+# Content/ · local rules
 Purpose: your own published marketing output.
 
 ## Read

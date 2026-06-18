@@ -8,7 +8,7 @@ source: gsc
 generated: false
 ---
 
-# Northwind — goals (append-only)
+# Northwind · goals (append-only)
 | date | metric | baseline | current | target | source | confidence | note |
 |------|--------|----------|---------|--------|--------|------------|------|
 | 2026-05-01 | organic-signups | 40 | 40 | 120 | gsc | confirmed | baseline |

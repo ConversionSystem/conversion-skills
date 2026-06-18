@@ -5,7 +5,7 @@ description: Research a target account or prospect from public sources and write
 
 # Lead Research
 
-Build a sourced, fit-scored profile of a target account or prospect from public information, with current signals and 2-3 specific outreach hooks. Draft only — a human runs the outreach.
+Build a sourced, fit-scored profile of a target account or prospect from public information, with current signals and 2-3 specific outreach hooks. Draft only · a human runs the outreach.
 
 ## When to use
 - A new account, company, or named person enters the pipeline and needs a profile before any outreach.
@@ -15,20 +15,20 @@ Build a sourced, fit-scored profile of a target account or prospect from public 
 
 ## Inputs
 - Target identifier: company name + domain, and/or a person's name + role/company. At least one is required.
-- `Company/icp.md` — the ideal-customer profile to score fit against (Solo/Team). Agency: the active client's ICP at `Clients/{slug}/context/icp.md`.
-- `Company/offers.md` — what you sell, to anchor hooks to a real offer (Agency: `Clients/{slug}/context/offers.md`).
-- `_system/connectors.md` — to check whether any OPTIONAL enrichment connectors are registered (none are required).
+- `Company/icp.md` · the ideal-customer profile to score fit against (Solo/Team). Agency: the active client's ICP at `Clients/{slug}/context/icp.md`.
+- `Company/offers.md` · what you sell, to anchor hooks to a real offer (Agency: `Clients/{slug}/context/offers.md`).
+- `_system/connectors.md` · to check whether any OPTIONAL enrichment connectors are registered (none are required).
 - Optional operator context: target's website URL, a specific deal/opportunity, or named people to prioritize.
 
 ## Process
 1. **Resolve the target and confirm profile mode.** Derive a kebab-case `{slug}` from the company name (e.g. "Northwind Logistics" -> `northwind-logistics`). Solo/Team -> output goes to `Pipeline/`. Agency: if this research is for a client engagement, set the active client and route ALL output into that client's workspace; otherwise treat as house pipeline. Decide account vs prospect: company-led research = `accounts/`, named-person-led research = `prospects/`.
 2. **Load context first.** Read the ICP, offers, and brand context for the correct owner (house vs active client). If the ICP file is missing, note the gap and score fit as `inferred` against whatever profile exists; do not invent ICP criteria.
-3. **Gather from public sources (web fetch by default).** Fetch the target's own pages — homepage, about, product/pricing, careers, blog/newsroom — plus public mentions (press, public social posts, public filings, job boards). Record the URL and access date for every fact. Use only OPTIONAL connectors that are already registered in `_system/connectors.md`; never require a paid data vendor. Do not access anything gated, private, or login-walled.
+3. **Gather from public sources (web fetch by default).** Fetch the target's own pages · homepage, about, product/pricing, careers, blog/newsroom · plus public mentions (press, public social posts, public filings, job boards). Record the URL and access date for every fact. Use only OPTIONAL connectors that are already registered in `_system/connectors.md`; never require a paid data vendor. Do not access anything gated, private, or login-walled.
 4. **Build the company picture.** Capture what they do, who they serve, size/segment signals, business model, and recent direction. Keep claims tied to a cited source; mark anything uncertain as `inferred`.
 5. **Score fit vs ICP.** Compare the target against each ICP dimension. Give a plain verdict (strong / partial / weak fit) with 2-4 reasons, each citing the evidence. State disqualifiers explicitly if present.
-6. **Identify signals and triggers.** Note time-bound buying signals — hiring, funding, launches, leadership changes, expansion, public pain, tech/stack changes, content themes. Each signal needs a source and a date.
+6. **Identify signals and triggers.** Note time-bound buying signals · hiring, funding, launches, leadership changes, expansion, public pain, tech/stack changes, content themes. Each signal needs a source and a date.
 7. **Map key people.** List relevant decision-makers and influencers with role, why they matter, and a public source. Capture only business-context professional information from public pages; do not collect private contact details.
-8. **Draft 2-3 outreach hooks.** Each hook ties a specific, cited signal to a specific line from `offers.md` — concrete, not generic. Mark each hook `status:draft`. Do NOT write, send, queue, or schedule any outreach.
+8. **Draft 2-3 outreach hooks.** Each hook ties a specific, cited signal to a specific line from `offers.md` · concrete, not generic. Mark each hook `status:draft`. Do NOT write, send, queue, or schedule any outreach.
 9. **Write the profile** to the canonical path with full universal frontmatter and a `## Sources` section listing every URL + access date. Append a KPI ledger row only when this research sets or moves a tracked baseline (e.g. a new qualified account added to the pipeline metric).
 
 ## Outputs
@@ -46,7 +46,7 @@ Build a sourced, fit-scored profile of a target account or prospect from public 
 - Route outputs to canonical homes; kebab-case slugs; ISO dates; universal frontmatter on the file.
 
 ## References
-- `Company/icp.md` (Agency: `Clients/{slug}/context/icp.md`) — fit scoring criteria.
-- `Company/offers.md` (Agency: `Clients/{slug}/context/offers.md`) — anchor for outreach hooks.
-- `_system/connectors.md` — registry of OPTIONAL enrichment connectors (none required).
-- `Memory/kpi-ledger.md` (Agency: `Clients/{slug}/goals.md`) — append-only KPI ledger.
+- `Company/icp.md` (Agency: `Clients/{slug}/context/icp.md`) · fit scoring criteria.
+- `Company/offers.md` (Agency: `Clients/{slug}/context/offers.md`) · anchor for outreach hooks.
+- `_system/connectors.md` · registry of OPTIONAL enrichment connectors (none required).
+- `Memory/kpi-ledger.md` (Agency: `Clients/{slug}/goals.md`) · append-only KPI ledger.

@@ -9,7 +9,7 @@ source: kickoff
 generated: false
 ---
 
-# Project — {{name}}
+# Project · {{name}}
 Goal: <!-- one sentence; the metric it should move -->
 Scope: <!-- in / out -->
 Acceptance: <!-- how we know it's done -->

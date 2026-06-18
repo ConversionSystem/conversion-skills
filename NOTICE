@@ -1,15 +1,10 @@
 Conversion OS
 Copyright (c) 2026 Conversion System
 
-This product is an original, clean-room work by Conversion System.
+Conversion OS is an original work by Conversion System. Every skill, template,
+router, script, and example vault in this repository was authored from scratch.
+No third-party source code is included, so no third-party attribution is owed.
 
-Portions of the engineering approach were studied from the following
-MIT-licensed project. Where any MIT-licensed source code is reused, its
-copyright and permission notice are retained here:
-
-  benai-skills — Copyright (c) 2025 BenAI — MIT License
-  https://github.com/naveedharri/benai-skills
-
-No proprietary names, branding, or product wording from the above are used
-on the Conversion OS product surface. See scripts/lint-cleanroom.sh, which
-fails the build if banned upstream terms appear in shipped files.
+The gates in scripts/ keep it that way. lint-cleanroom.sh fails the build if a
+foreign product name appears on the shipped surface. check-brand.sh enforces the
+Conversion System brand.

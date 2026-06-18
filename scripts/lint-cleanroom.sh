@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Fails if banned upstream/product terms appear on the Conversion OS surface.
-# NOTICE is allowed to name upstream for MIT attribution; scripts/ describe the rule.
+# The whole shipped surface is scanned, including NOTICE. scripts/ hold the rule itself.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
-BANNED='BenAI|benai|system3|Relay\.md|relay-fork|Plot\.md'
-TARGETS=(skills templates examples .claude-plugin CLAUDE.md README.md)
+BANNED='BenAI|benai|system3|Relay\.md|relay-fork|Plot\.md|naveedharri'
+TARGETS=(skills templates examples docs .claude-plugin CLAUDE.md README.md SKILLS.md NOTICE)
 hits=0
 for t in "${TARGETS[@]}"; do
   [ -e "$t" ] || continue

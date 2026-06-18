@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# _system/config.md — operating config
+# _system/config.md · operating config
 
 ## Profile
 profile: solo
@@ -17,7 +17,7 @@ profile: solo
 ## Operator
 cadence: daily            # hourly | daily | twice-daily | custom-cron
 escalation_contact: steve@conversionsystem.com
-signature: "— Conversion Operator"   # stamp on agent-written edits
+signature: "CS // OPERATOR"   # stamp on agent-written edits
 
 ## Per-run budgets (hard caps; stop cleanly + escalate when hit)
 reads: 40

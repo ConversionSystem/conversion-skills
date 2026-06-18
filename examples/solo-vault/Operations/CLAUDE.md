@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Operations/ — local rules
+# Operations/ · local rules
 Purpose: how the company runs. SOPs, processes, meetings, reviews, tasks.
 
 ## Read

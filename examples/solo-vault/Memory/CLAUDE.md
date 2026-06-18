@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Memory/ — local rules
+# Memory/ · local rules
 Purpose: the compounding layer. KPI ledger + decisions + lessons + glossary.
 
 ## Read

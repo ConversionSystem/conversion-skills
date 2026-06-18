@@ -9,6 +9,6 @@ source: onboarding
 generated: false
 ---
 
-# jordan — access
+# jordan · access
 role: owner
 reads: all

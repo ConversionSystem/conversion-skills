@@ -44,7 +44,7 @@ Turn a single source into hook-first social post variants in the business's voic
 10. Hand back the path and a short summary. Stop. A human edits and posts.
 
 ## Outputs
-- `Content/{slug}-{date}/final/social-posts.md` (Solo/Team) OR the active client's firewalled `Clients/{slug}/.../social-posts.md` (Agency) — all variants, grouped by platform, each `status:draft`, with full universal frontmatter (`type:social-post`, `status:draft`, `owner`, `date`, `reviewed`, `tags` (>=2), `confidential` (true for Agency client work), `source` (the resolved source path/ref), `generated:true`).
+- `Content/{slug}-{date}/final/social-posts.md` (Solo/Team) OR the active client's firewalled `Clients/{slug}/.../social-posts.md` (Agency) · all variants, grouped by platform, each `status:draft`, with full universal frontmatter (`type:social-post`, `status:draft`, `owner`, `date`, `reviewed`, `tags` (>=2), `confidential` (true for Agency client work), `source` (the resolved source path/ref), `generated:true`).
 - `Content/{slug}-{date}/brief.md` if none existed: records the source, chosen platforms, N, the top-of-funnel metric, and how it is measured.
 - Ledger row (only if a baseline/target is newly set), appended to `Memory/kpi-ledger.md` (Solo/Team) or `Clients/{slug}/goals.md` (Agency), exact columns: `| date | metric | baseline | current | target | source | confidence | note |`. Append-only; never edit prior rows.
 - Audit line appended under `_system/audit/`.

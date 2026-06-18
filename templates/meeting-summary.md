@@ -9,7 +9,7 @@ source: {{transcript|notes}}
 generated: false
 ---
 
-# {{YYYY-MM-DD}} — {{topic}} ({{kind}})
+# {{YYYY-MM-DD}} · {{topic}} ({{kind}})
 Attendees: {{names}}
 
 ## Summary
@@ -19,7 +19,7 @@ Attendees: {{names}}
 <!-- each -> also copy to Memory/decisions/YYYY-MM-DD-{slug}.md -->
 
 ## Actions
-- [ ] {{owner}} — {{action}} (due {{date}})
+- [ ] {{owner}} · {{action}} (due {{date}})
 
 ## Metrics mentioned
 <!-- each -> append a row to Memory/kpi-ledger.md with a source -->

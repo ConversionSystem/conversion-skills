@@ -9,6 +9,6 @@ source: onboarding
 generated: false
 ---
 
-# Company Profile — Northstar Collective (agency)
+# Company Profile · Northstar Collective (agency)
 One-liner: a 3-person growth agency for B2B SaaS.
 Model: monthly retainers per client. Team: steve (owner), dana, marco.

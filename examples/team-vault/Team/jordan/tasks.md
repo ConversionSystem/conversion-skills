@@ -9,5 +9,5 @@ source: ops
 generated: false
 ---
 
-# jordan — tasks
+# jordan · tasks
 - [ ] (none yet)

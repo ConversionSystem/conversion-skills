@@ -8,7 +8,7 @@ source: multiple
 generated: false
 ---
 
-# KPI Ledger — append-only
+# KPI Ledger · append-only
 
 Rules: one row per metric moved. NEVER edit or reorder prior rows. Scan from the
 bottom for the latest value. `confidence` ∈ {confirmed, reported, inferred, stale}.

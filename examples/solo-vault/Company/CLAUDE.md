@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Company/ — local rules
+# Company/ · local rules
 Purpose: identity & slow-changing truth. Who we are, what we sell, who we serve.
 
 ## Read

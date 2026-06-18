@@ -9,5 +9,5 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Memory/ — firm metric truth (NOT client metrics)
+# Memory/ · firm metric truth (NOT client metrics)
 Client metrics live in each Clients/{slug}/goals.md. Append-only here too.

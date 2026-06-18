@@ -9,5 +9,5 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Library/ — reusable, non-client assets only
+# Library/ · reusable, non-client assets only
 Never reference a specific client here.

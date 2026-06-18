@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# _system/permissions.md — access control (agency)
+# _system/permissions.md · access control (agency)
 Pairs AI-scoping with storage-layer ACLs + the `_system/audit/` trail.
 
 | principal | role | clients | reads | writes |

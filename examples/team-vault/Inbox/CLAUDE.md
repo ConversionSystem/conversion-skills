@@ -7,4 +7,4 @@ tags: [router, inbox]
 confidential: false
 source: Conversion OS Setup
 generated: false
----# Inbox/ — universal capture; triage daily
+---# Inbox/ · universal capture; triage daily

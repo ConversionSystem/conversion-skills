@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# Pipeline/ — local rules
+# Pipeline/ · local rules
 Purpose: sales/CRM context. Accounts, prospects, and the live deal board.
 
 ## Read

@@ -9,7 +9,7 @@ source: ops
 generated: false
 ---
 
-# Task — {{title}}
+# Task · {{title}}
 Outcome: <!-- the done-state in one sentence -->
 Why now: <!-- the metric/goal it serves -->
 Steps: <!-- 1..n -->

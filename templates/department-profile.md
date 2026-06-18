@@ -9,7 +9,7 @@ source: planning
 generated: false
 ---
 
-# Department — {{name}}
+# Department · {{name}}
 Lead: {{lead}} · Members: <!-- ... -->
 Charter: <!-- what this department owns -->
 KPIs: <!-- the metrics it is accountable for (tracked in Memory/kpi-ledger.md) -->

@@ -9,7 +9,7 @@ source: Conversion OS Setup
 generated: false
 ---
 
-# _system/rules.md — accumulated hard rules
+# _system/rules.md · accumulated hard rules
 
 Global, testable corrections accrue here (one line each). The Operator and every
 workflow obey them. Examples seeded below; add as you learn.

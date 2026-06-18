@@ -9,7 +9,7 @@ source: research
 generated: false
 ---
 
-# Competitor — {{name}}
+# Competitor · {{name}}
 Positioning: <!-- how they frame themselves -->
 Strengths / weaknesses: <!-- ... -->
 Pricing: <!-- if known -->

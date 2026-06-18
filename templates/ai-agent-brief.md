@@ -9,7 +9,7 @@ source: ops
 generated: false
 ---
 
-# AI Agent — {{name}}
+# AI Agent · {{name}}
 Job: <!-- the outcome it owns -->
 Reads: <!-- which folders/files -->
 Writes: <!-- where; ledger rows? -->

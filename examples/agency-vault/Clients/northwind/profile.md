@@ -9,6 +9,6 @@ source: onboarding
 generated: false
 ---
 
-# Client — Northwind
+# Client · Northwind
 Mandate: grow organic signups via SEO + content. Tier: retainer $4k/mo.
 Key people: Priya (Head of Growth). Cadence: weekly call, monthly report.

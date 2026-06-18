@@ -9,5 +9,5 @@ source: planning
 generated: false
 ---
 
-# Department — Growth
+# Department · Growth
 Lead: dana. Charter: own pipeline + content. SOPs in sops/.

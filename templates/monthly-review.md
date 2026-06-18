@@ -9,7 +9,7 @@ source: business-review
 generated: true
 ---
 
-# Business Review — {{YYYY-MM}}
+# Business Review · {{YYYY-MM}}
 ## Scorecard
 | metric | baseline | current | target | Δ period | direction |
 |--------|----------|---------|--------|----------|-----------|
