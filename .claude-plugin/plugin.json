@@ -1,0 +1,10 @@
+{
+  "name": "conversion-os",
+  "version": "2.0.0-alpha.1",
+  "description": "Conversion OS — an AI-powered operating system that gives Claude a permanent, governed memory of your business and a daily autonomous operator that keeps it current.",
+  "author": {
+    "name": "Conversion System",
+    "email": "steve@conversionsystem.com"
+  },
+  "license": "SEE LICENSE / NOTICE"
+}

@@ -1,0 +1,15 @@
+Conversion OS
+Copyright (c) 2026 Conversion System
+
+This product is an original, clean-room work by Conversion System.
+
+Portions of the engineering approach were studied from the following
+MIT-licensed project. Where any MIT-licensed source code is reused, its
+copyright and permission notice are retained here:
+
+  benai-skills — Copyright (c) 2025 BenAI — MIT License
+  https://github.com/naveedharri/benai-skills
+
+No proprietary names, branding, or product wording from the above are used
+on the Conversion OS product surface. See scripts/lint-cleanroom.sh, which
+fails the build if banned upstream terms appear in shipped files.

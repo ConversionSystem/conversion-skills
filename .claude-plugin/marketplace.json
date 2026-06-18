@@ -1,0 +1,8 @@
+{
+  "name": "conversion-system",
+  "owner": "ConversionSystem",
+  "repo": "ConversionSystem/OS-AI",
+  "plugins": [
+    { "name": "conversion-os", "source": "./", "description": "The Conversion OS: setup, memory, operator, optimizer, team, client, connector layer, and the workflow library." }
+  ]
+}
