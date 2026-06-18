@@ -12,15 +12,30 @@ GROUPS = [
         "daily", "weekly-review", "business-review", "pipeline-update",
         "meeting-capture", "project-update", "content-plan", "sop-create", "exec-dashboard"]),
     ("SEO and visibility", [
-        "seo-audit", "seo-optimize", "seo-schema", "seo-programmatic", "seo-compare", "geo-optimize"]),
+        "seo-audit", "seo-optimize", "seo-schema", "seo-programmatic", "seo-compare", "geo-optimize",
+        "seo-content", "seo-technical", "seo-sitemap", "seo-hreflang", "seo-images", "seo-plan", "seo-competitor-pages"]),
+    ("Paid ads", [
+        "ads-audit", "ads-plan", "ads-google", "ads-meta", "ads-linkedin", "ads-tiktok", "ads-microsoft",
+        "ads-youtube", "ads-budget", "ads-creative", "ads-competitor", "ads-landing"]),
     ("Sales and pipeline", [
-        "lead-research", "lead-qualify", "lead-enrich", "crm-mining", "pipeline-review", "win-loss"]),
+        "lead-research", "lead-qualify", "lead-enrich", "crm-mining", "pipeline-review", "win-loss",
+        "linkedin-writer", "linkedin-post-engagers", "sales-rep-analyzer", "free-audit"]),
     ("Content and publishing", [
         "email-sequence", "email-personalize", "social-post", "newsletter", "blog-post",
         "landing-page", "repurpose", "wp-publish", "wp-refresh"]),
+    ("YouTube", [
+        "youtube-ideation", "youtube-brief", "youtube-outline", "youtube-scripting",
+        "youtube-packaging", "title-generation", "youtube-thumbnail-generate"]),
+    ("Creative and media", [
+        "infographic", "excalidraw", "gif-creator", "video", "generate-visual", "audio-transcriber"]),
+    ("Design", [
+        "taste", "redesign", "minimalist-ui", "brutalist-ui", "soft-ui", "stitch", "output-enforcement"]),
     ("Retention and proof", [
         "customer-onboarding", "churn-watch", "case-study", "testimonial", "portfolio-watch"]),
-    ("Ads and acquisition", ["ads-audit", "free-audit"]),
+    ("Build and utilities", [
+        "mcp-builder", "agent-builder", "deep-research", "fact-checker", "humanizer", "file-organizer",
+        "prompt-master", "process-interviewer", "decision-toolkit", "n8n", "n8n-prd-generator",
+        "course-creator", "website-launch-kit", "frontend-slides"]),
 ]
 
 NOTES = {
@@ -30,7 +45,11 @@ NOTES = {
     "Sales and pipeline": "Needs: a vault and `Pipeline/` data, or a CRM export. Produces: prospect profiles, fit verdicts, pipeline analysis. No outreach is sent.",
     "Content and publishing": "Needs: a vault, your offers, your ICP, and your brand voice. Produces: drafts in `Content/`. Draft only. `wp-publish` and `wp-refresh` stage WordPress drafts, never live.",
     "Retention and proof": "Needs: a vault and customer or client data. Produces: onboarding plans, churn-risk lists, case studies drawn from the ledger, testimonials, a portfolio roll-up.",
-    "Ads and acquisition": "Needs: an ad-account export or a described setup, or a prospect URL. Produces: a prioritized findings report. Draft only. Never changes budgets or bids.",
+    "Paid ads": "Needs: an ad-account export or a described setup, plus your offers and ICP. Produces: campaign plans, account structures, creative drafts, and prioritized audit findings in `Projects/` or `Content/`. Draft only. Never changes budgets, bids, or live campaigns.",
+    "YouTube": "Needs: a channel niche, audience, and goal. Produces: ideas, briefs, outlines, scripts, titles, and thumbnail concepts in `Content/`. Draft only.",
+    "Creative and media": "Needs: a source and, for images or video, an optional generation connector. Produces: infographics, diagrams, gifs, video packages, images, and transcripts. Draft only. Without a connector you get a build-ready brief.",
+    "Design": "Needs: a page, a screen, or a brief. Produces: design specs and scored critiques in `Projects/`. Draft only.",
+    "Build and utilities": "Needs: a described job. Produces: MCP servers, agent briefs, research reports, automations, prompts, decisions, and decks in `Projects/` or `Library/`. Code and configs are drafts. Credentials never in a file.",
 }
 
 # load skill descriptions

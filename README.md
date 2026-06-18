@@ -17,7 +17,7 @@ Every business runs on context. Who you are, what you sell, who you serve, what 
 5. **Team OS.** Shared knowledge, role scoping, permissions.
 6. **Client OS.** Firewalled per-client delivery for agencies.
 7. **Connector layer.** Read and write the OS across tools, within scope, logged.
-8. **Workflow Library.** 9 operating routines and 28 delivery skills that do the work and log what moved.
+8. **Workflow Library.** 9 operating routines and 83 delivery skills across ads, SEO, sales, content, YouTube, creative, and design, all logging what moved.
 
 ## The ledger is the moat
 `Memory/kpi-ledger.md` is append-only. Every run adds one row: date, metric, baseline, current, target, source, confidence, note. Nothing is erased. The monthly review rolls the whole ledger against a baseline and shows the trend. Cancelling loses the record. That is the point.
@@ -30,7 +30,7 @@ Every business runs on context. Who you are, what you sell, who you serve, what 
 ## Guides
 Start with `docs/`.
 - [docs/getting-started.md](docs/getting-started.md) · what you need, how to install, your first 10 minutes.
-- [docs/commands.md](docs/commands.md) · all 44 commands, what each does, what it needs.
+- [docs/commands.md](docs/commands.md) · all 99 commands, what each does, what it needs.
 - [docs/daily-use.md](docs/daily-use.md) · the operating rhythm, with worked examples.
 - [docs/setup-guide.md](docs/setup-guide.md) · the three profiles.
 - [docs/connectors.md](docs/connectors.md) · connect tools and run the operator. Optional.
@@ -41,7 +41,7 @@ Start with `docs/`.
 
 ## Repo
 ```
-skills/      44 skills (7 modules, 9 workflows, 28 delivery)
+skills/      99 skills (7 modules, 9 workflows, 83 delivery)
 templates/   19 document templates Setup copies in
 examples/    3 seeded vaults: solo, team, agency
 scripts/     5 gates: clean-room, budgets, secrets, firewall, brand
@@ -51,6 +51,6 @@ BRAND.md     the Conversion System brand, enforced by scripts/check-brand.sh
 ```
 
 ## Receipts
-44 skills. 5 gates green on every push. 0 em-dashes. 0 cross-client leaks (a planted leak was caught and removed in test V4).
+99 skills. 5 gates green on every push. 0 em-dashes. 0 cross-client leaks (a planted leak was caught and removed in test V4).
 
 By Angel Castro · AI & Automation Lead · linkedin.com/in/anglcstr
