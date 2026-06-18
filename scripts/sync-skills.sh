@@ -31,6 +31,10 @@ print(f"  OK: {len(rows)} skills validated, SKILLS.md written")
 PY
 python3 "$ROOT/scripts/gen-commands.py"
 
+# guard: no stray SKILL.md outside skills/
+stray="$(find . -name 'SKILL.md' -not -path './skills/*' -not -path './.git/*' 2>/dev/null; find . -maxdepth 1 -name '*-SKILL.md' 2>/dev/null)"
+if [ -n "$stray" ]; then echo "FAIL: stray SKILL files outside skills/:"; echo "$stray"; exit 1; fi
+
 echo "== run gates =="
 "$ROOT/scripts/lint-cleanroom.sh"
 "$ROOT/scripts/check-budgets.sh"
