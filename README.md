@@ -27,6 +27,17 @@ Every business runs on context. Who you are, what you sell, who you serve, what 
 2. Run `/setup`. Pick a profile. Paste your site, drop a few docs.
 3. Ten minutes later: a populated vault, a seeded ledger, a first deliverable.
 
+## Guides
+Start with `docs/`.
+- [docs/getting-started.md](docs/getting-started.md) · what you need, how to install, your first 10 minutes.
+- [docs/commands.md](docs/commands.md) · all 44 commands, what each does, what it needs.
+- [docs/daily-use.md](docs/daily-use.md) · the operating rhythm, with worked examples.
+- [docs/setup-guide.md](docs/setup-guide.md) · the three profiles.
+- [docs/connectors.md](docs/connectors.md) · connect tools and run the operator. Optional.
+- [docs/confidentiality.md](docs/confidentiality.md) · ownership, the firewall, permissions, secrets.
+- [docs/instruction-layer.md](docs/instruction-layer.md) · how routing and the ledger work.
+- [docs/README.md](docs/README.md) · the full index.
+
 ## Repo
 ```
 skills/      44 skills (7 modules, 9 workflows, 28 delivery)
@@ -34,7 +45,7 @@ templates/   19 document templates Setup copies in
 examples/    3 seeded vaults: solo, team, agency
 scripts/     5 gates: clean-room, budgets, secrets, firewall, brand
 assets/      brand-tokens.css
-docs/        quickstart, setup, confidentiality, instruction layer
+docs/        getting-started, commands, daily-use, setup, connectors, and more
 BRAND.md     the Conversion System brand, enforced by scripts/check-brand.sh
 ```
 

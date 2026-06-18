@@ -29,6 +29,7 @@ with open('SKILLS.md','w') as out:
         if n not in core: out.write(f'- **`/{n}`** · {d}\n')
 print(f"  OK: {len(rows)} skills validated, SKILLS.md written")
 PY
+python3 "$ROOT/scripts/gen-commands.py"
 
 echo "== run gates =="
 "$ROOT/scripts/lint-cleanroom.sh"
