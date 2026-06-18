@@ -10,6 +10,14 @@ Start here.
 - **[confidentiality.md](confidentiality.md)** · Ownership, the firewall, permissions, secrets.
 - **[instruction-layer.md](instruction-layer.md)** · How routing and the ledger work.
 - **[quickstart.md](quickstart.md)** · The 60-second version.
+
+Selling it:
+- **[pricing.md](pricing.md)** · The five tiers. Fixed, named, refundable.
+- **[sales-page.md](sales-page.md)** · The page build spec, in brand.
+- **[demo.md](demo.md)** · The 15-minute demo flow.
+
+Brand and rules:
 - **[../BRAND.md](../BRAND.md)** · The Conversion System brand.
+- **[../CONTRIBUTING.md](../CONTRIBUTING.md)** · How to add a skill and pass the gates.
 
 By Angel Castro · AI & Automation Lead · linkedin.com/in/anglcstr

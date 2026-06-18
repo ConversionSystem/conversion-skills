@@ -36,6 +36,7 @@ Start with `docs/`.
 - [docs/connectors.md](docs/connectors.md) · connect tools and run the operator. Optional.
 - [docs/confidentiality.md](docs/confidentiality.md) · ownership, the firewall, permissions, secrets.
 - [docs/instruction-layer.md](docs/instruction-layer.md) · how routing and the ledger work.
+- [docs/pricing.md](docs/pricing.md) · the five tiers. Fixed, named, refundable.
 - [docs/README.md](docs/README.md) · the full index.
 
 ## Repo
