@@ -1,8 +1,20 @@
 {
   "name": "conversion-system",
-  "owner": "ConversionSystem",
-  "repo": "ConversionSystem/OS-AI",
+  "owner": {
+    "name": "Conversion System",
+    "email": "steve@conversionsystem.com"
+  },
+  "metadata": {
+    "description": "Conversion OS by Conversion System. An AI operating system: persistent business memory, a daily operator, and 99 skills.",
+    "version": "2.0.0-alpha.1"
+  },
   "plugins": [
-    { "name": "conversion-os", "source": "./", "description": "Conversion OS. Setup, memory, operator, optimizer, team, client, the connector layer, and the workflow library. 44 skills." }
+    {
+      "name": "conversion-os",
+      "source": "./",
+      "description": "Conversion OS. Persistent business memory, a daily operator, and 99 skills. Markdown and git, no database.",
+      "version": "2.0.0-alpha.1",
+      "author": { "name": "Conversion System", "email": "steve@conversionsystem.com" }
+    }
   ]
 }

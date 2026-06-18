@@ -1,7 +1,7 @@
 {
   "name": "conversion-os",
   "version": "2.0.0-alpha.1",
-  "description": "The operating system Conversion System runs on. Persistent business memory, a daily operator, and 44 skills. Markdown and git, no database.",
+  "description": "The operating system Conversion System runs on. Persistent business memory, a daily operator, and 99 skills. Markdown and git, no database.",
   "author": {
     "name": "Conversion System",
     "email": "steve@conversionsystem.com"
