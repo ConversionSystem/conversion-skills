@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conversion OS · Conversion System</title>
+<meta name="description" content="An AI operating system that keeps your business context, proves what moved, and does the work. Markdown you own. No database.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --paper2:#f4f4f0; --ink:#0a0a0a; --indigo:#1a0f6a;
+  --orange:#ff5a1f; --solar:#ffd91a; --cobalt:#1f4cff; --mute:#5e5e5e; --dim:#8a8a8a;
+  --sans:'Inter Tight',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.45;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:var(--cobalt);text-decoration:none}
+.mono{font-family:var(--mono)}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+.wordmark{font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);font-size:18px}
+.wordmark .slash{color:var(--orange);padding:0 .16em}
+.desc{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-left:10px}
+
+nav{border-bottom:1px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:10}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .links{display:flex;gap:22px;align-items:center}
+nav .links a{color:var(--ink);font-weight:500;font-size:14px}
+@media(max-width:680px){nav .links a:not(.btn){display:none}}
+
+.btn{display:inline-block;font-weight:600;font-size:15px;padding:12px 20px;border:2px solid var(--ink);cursor:pointer}
+.btn-orange{background:var(--orange);border-color:var(--orange);color:var(--paper)}
+.btn-out{background:transparent;color:var(--ink)}
+
+.hero{padding:104px 0 80px}
+.hero h1{font-size:clamp(40px,7.2vw,86px);font-weight:800;letter-spacing:-.02em;line-height:1.02;margin-top:18px}
+.hero .sub{font-size:20px;color:var(--mute);max-width:620px;margin:28px 0 36px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+
+.receipts{background:var(--ink);color:var(--paper)}
+.receipts .wrap{padding:48px 24px}
+.receipts .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.receipt .num{font-family:var(--mono);font-weight:700;font-size:46px;line-height:1}
+.receipt .ctx{font-size:14px;color:#cfcfcf;margin-top:10px}
+@media(max-width:760px){.receipts .grid{grid-template-columns:repeat(2,1fr);gap:28px}}
+
+section{padding:76px 0;border-bottom:1px solid var(--paper2)}
+h2{font-size:clamp(28px,4.2vw,46px);font-weight:800;letter-spacing:-.01em}
+.lead{color:var(--mute);max-width:640px;margin:10px 0 36px;font-size:17px}
+
+.modules{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.mod{border:1px solid var(--paper2);padding:22px;background:var(--paper)}
+.mod .n{font-family:var(--mono);color:var(--dim);font-size:12px}
+.mod h3{font-size:18px;margin:6px 0 6px}
+.mod p{color:var(--mute);font-size:14px}
+@media(max-width:760px){.modules{grid-template-columns:1fr}}
+
+.moat{background:var(--indigo);color:var(--paper)}
+.moat .wrap{padding:80px 24px}
+.moat h2{color:var(--paper);margin-top:14px}
+.moat p{color:#d4cffb;max-width:640px;margin-top:14px;font-size:17px}
+.moat .ledrow{font-family:var(--mono);font-size:13px;background:rgba(255,255,255,.08);padding:14px 16px;border-radius:6px;overflow-x:auto;white-space:nowrap;margin-top:26px;color:#fff}
+.moat .big{font-size:24px;font-weight:700;margin-top:26px;max-width:700px;color:var(--paper)}
+
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--paper2)}
+th{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+td:last-child{font-weight:600;color:var(--ink)}
+th:last-child{color:var(--ink)}
+
+.tiers{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.tier{border:1px solid var(--ink);padding:20px;display:flex;flex-direction:column}
+.tier h3{font-size:13px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
+.tier .price{font-family:var(--mono);font-weight:700;font-size:21px;margin:12px 0}
+.tier .who{font-size:13px;color:var(--mute);margin-bottom:10px}
+.tier ul{list-style:none;font-size:13px;color:var(--mute);display:flex;flex-direction:column;gap:6px;margin-top:auto}
+.tier.feature{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tier.feature h3{color:var(--dim)}
+.tier.feature .price{color:var(--solar)}
+.tier.feature .who,.tier.feature ul{color:#cfcfcf}
+@media(max-width:900px){.tiers{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.tiers{grid-template-columns:1fr}}
+
+footer{padding:72px 0;text-align:center}
+footer .cta{margin-bottom:26px}
+footer .line{font-size:19px;font-weight:600;margin-bottom:16px}
+footer .byline{font-family:var(--mono);font-size:13px;color:var(--mute)}
+.guarantee{font-size:14px;color:var(--mute);margin-top:18px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div><span class="wordmark">CONVERSION<span class="slash">/</span>SYSTEM</span><span class="desc">an AI agency</span></div>
+  <div class="links">
+    <a href="#product">Product</a>
+    <a href="#pricing">Pricing</a>
+    <a href="https://github.com/ConversionSystem/OS-AI/tree/v2/docs">Docs</a>
+    <a href="https://github.com/ConversionSystem/OS-AI">GitHub</a>
+    <a class="btn btn-orange" href="#pricing" style="padding:8px 16px;font-size:14px">Get Conversion OS</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="label">The context layer for your business</div>
+  <h1>Your business forgets.<br>Conversion OS remembers.</h1>
+  <p class="sub">An AI operating system that keeps your context, proves what moved, and does the work. Markdown you own. No database.</p>
+  <div class="cta">
+    <a class="btn btn-orange" href="#pricing">Get Conversion OS</a>
+    <a class="btn btn-out" href="https://github.com/ConversionSystem/OS-AI/tree/v2/docs/getting-started.md">Read the docs</a>
+  </div>
+</div></header>
+
+<div class="receipts"><div class="wrap">
+  <div class="label" style="color:var(--dim);margin-bottom:26px">Numbers we prove in the repo</div>
+  <div class="grid">
+    <div class="receipt"><div class="num">99</div><div class="ctx">skills, one install</div></div>
+    <div class="receipt"><div class="num">5</div><div class="ctx">gates, green on every push</div></div>
+    <div class="receipt"><div class="num">10<span style="font-size:22px"> min</span></div><div class="ctx">empty folder to a working vault</div></div>
+    <div class="receipt"><div class="num">0</div><div class="ctx">cross-client leaks, proven by the firewall test</div></div>
+  </div>
+</div></div>
+
+<section id="product"><div class="wrap">
+  <h2>What it does</h2>
+  <p class="lead">Eight modules. One architecture. Three profiles: solo, team, agency.</p>
+  <div class="modules">
+    <div class="mod"><div class="n">01</div><h3>Setup</h3><p>Empty folder to a governed vault in 10 minutes.</p></div>
+    <div class="mod"><div class="n">02</div><h3>Memory</h3><p>Persistent business memory and the append-only KPI ledger.</p></div>
+    <div class="mod"><div class="n">03</div><h3>Operator</h3><p>A daily run that pulls meetings, chat, email, CRM, and calendar. Drafts only.</p></div>
+    <div class="mod"><div class="n">04</div><h3>Optimizer</h3><p>Audits the vault and ships a fix per finding.</p></div>
+    <div class="mod"><div class="n">05</div><h3>Team OS</h3><p>Shared knowledge, role scoping, real permissions, an audit trail.</p></div>
+    <div class="mod"><div class="n">06</div><h3>Client OS</h3><p>Firewalled per-client delivery for agencies. One client per task.</p></div>
+    <div class="mod"><div class="n">07</div><h3>Connector layer</h3><p>Read and write the OS across tools, within scope, logged.</p></div>
+    <div class="mod"><div class="n">08</div><h3>Workflow Library</h3><p>92 routines across ads, SEO, sales, content, and design. Each logs what moved.</p></div>
+  </div>
+</div></section>
+
+<div class="moat"><div class="wrap">
+  <div class="label" style="color:#b9b0ff">The moat</div>
+  <h2>It compounds.</h2>
+  <p>The KPI ledger is append-only. Every run adds one row. Nothing is erased, so progress is cumulative and auditable.</p>
+  <div class="ledrow">| date | metric | baseline | current | target | source | confidence | note |</div>
+  <p class="big">It gets cheaper to grow every month, because the memory compounds.</p>
+</div></div>
+
+<section><div class="wrap">
+  <h2>Conversion OS vs the usual</h2>
+  <p class="lead">A folder of notes forgets. A CRM records but does not act. Conversion OS does both, and proves it.</p>
+  <table>
+    <tr><th>Trait</th><th>A folder of notes</th><th>A CRM</th><th>Conversion OS</th></tr>
+    <tr><td>Memory</td><td>You reread it</td><td>Records, not context</td><td>Compounding ledger</td></tr>
+    <tr><td>Does the work</td><td>No</td><td>No</td><td>99 skills</td></tr>
+    <tr><td>Proof</td><td>None</td><td>Vanity dashboards</td><td>The trend, from real rows</td></tr>
+    <tr><td>You own it</td><td>Yes</td><td>No, it is their database</td><td>Yes, plain files</td></tr>
+  </table>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <h2>Pricing</h2>
+  <p class="lead">Fixed. Named. Refundable. You keep your files either way.</p>
+  <div class="tiers">
+    <div class="tier"><h3>Self-Serve</h3><div class="price">$497</div><div class="who">one time</div><ul><li>The full plugin, 99 skills</li><li>3 example vaults</li><li>Lifetime v2 updates</li></ul></div>
+    <div class="tier"><h3>Pro</h3><div class="price">$97<span style="font-size:13px">/mo</span></div><div class="who">the parts that compound</div><ul><li>The daily operator</li><li>Connector setup</li><li>Monthly review for you</li></ul></div>
+    <div class="tier"><h3>Done-With-You</h3><div class="price">$2,500</div><div class="who">we set it up in a week</div><ul><li>A working install session</li><li>Top 3 workflows wired</li><li>30 days of support</li></ul></div>
+    <div class="tier feature"><h3>Done-For-You</h3><div class="price">$7,500</div><div class="who">plus $500/mo. we run it</div><ul><li>Full OS on your business</li><li>Operator scheduled, dashboards live</li><li>Monthly tuning. Cancel any time</li></ul></div>
+    <div class="tier"><h3>Agency License</h3><div class="price">$1,000<span style="font-size:13px">/mo</span></div><div class="who">deploy it for clients</div><ul><li>Unlimited firewalled vaults</li><li>The Client OS + delivery skills</li><li>Proposal and invoice templates</li></ul></div>
+  </div>
+  <p class="guarantee">If the first deliverable is not useful, the Self-Serve and Done-With-You fees are refundable inside 14 days. You keep your files.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cta"><a class="btn btn-orange" href="https://github.com/ConversionSystem/OS-AI">Get Conversion OS</a></div>
+  <p class="line">Ten minutes from now you have a vault that remembers.</p>
+  <p class="byline">By Angel Castro · AI &amp; Automation Lead · linkedin.com/in/anglcstr</p>
+</div></footer>
+
+</body>
+</html>

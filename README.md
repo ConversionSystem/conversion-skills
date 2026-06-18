@@ -42,10 +42,11 @@ Start with `docs/`.
 ## Repo
 ```
 skills/      99 skills (7 modules, 9 workflows, 83 delivery)
-templates/   19 document templates Setup copies in
+templates/   21 document templates Setup copies in
 examples/    3 seeded vaults: solo, team, agency
 scripts/     5 gates: clean-room, budgets, secrets, firewall, brand
 assets/      brand-tokens.css
+site/        the landing page, self-contained HTML
 docs/        getting-started, commands, daily-use, setup, connectors, and more
 BRAND.md     the Conversion System brand, enforced by scripts/check-brand.sh
 ```
