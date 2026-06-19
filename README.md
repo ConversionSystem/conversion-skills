@@ -1,8 +1,8 @@
-# Conversion OS
+# Conversion Skills
 
-**CONVERSION / SYSTEM** · an AI agency. Conversion OS is the operating system we run on, and the one we ship to operators, teams, and agencies.
+**CONVERSION / SKILLS** · by Conversion System. Our toolkit: 99 Claude skills that run your growth and remember what moved. It powers Conversion OS, or runs on its own.
 
-Every business runs on context. Who you are, what you sell, who you serve, what you decided, what moved the number. Most of it evaporates. Conversion OS keeps it. Plain markdown in your own folder, versioned with git. The AI is the runtime. The files are the database. Git is the journal. No platform. No lock-in.
+Every business runs on context. Who you are, what you sell, who you serve, what you decided, what moved the number. Most of it evaporates. Conversion Skills keeps it. Plain markdown in your own folder, versioned with git. The AI is the runtime. The files are the database. Git is the journal. No platform. No lock-in.
 
 ## Three profiles, one architecture
 - **Solo.** One operator. Adds `Pipeline/` for deals.

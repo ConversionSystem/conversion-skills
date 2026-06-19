@@ -5,12 +5,12 @@ owner: system
 reviewed: {{YYYY-MM-DD}}
 tags: [router, brain]
 confidential: false
-source: Conversion OS Setup
+source: Conversion Skills Setup
 generated: false
 ---
 
-# Conversion OS · Root Router
-Product: Conversion OS by Conversion System. Profile: {{solo|team|agency}}.
+# Conversion Skills · Root Router
+Product: Conversion Skills by Conversion System. Profile: {{solo|team|agency}}.
 Read this file fully at the start of every session. Keep it <=150 lines.
 
 ## 1. Startup read-routine

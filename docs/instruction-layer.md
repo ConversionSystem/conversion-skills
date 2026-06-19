@@ -1,6 +1,6 @@
 # The Instruction Layer
 
-Conversion OS uses a router pattern, so the AI always knows where to read and where to write.
+Conversion Skills uses a router pattern, so the AI always knows where to read and where to write.
 
 ## Root `CLAUDE.md`, the brain (150 lines or fewer)
 Read in full at the start of every session. It holds:

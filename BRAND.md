@@ -1,6 +1,6 @@
 # Conversion System Brand
 
-The brand for Conversion OS. Parent brand: Conversion System, an AI agency. This file is the source of truth. If a surface disagrees with this file, the surface is wrong. Enforced by `scripts/check-brand.sh`.
+The brand for Conversion Skills. Parent brand: Conversion System, an AI agency. This file is the source of truth. If a surface disagrees with this file, the surface is wrong. Enforced by `scripts/check-brand.sh`.
 
 Version 3.0 · applies the Conversion System Brand Guidelines (v2.0, May 2026).
 
@@ -79,7 +79,8 @@ Conversion System is the parent, an AI agency for mid-market B2B (conversionsyst
 - **Kyra**, product, an AI receptionist for local service businesses (meetkyra.com).
 - **Studio**, service line, six-week conversion sprints, fixed price, a named team.
 - **Audit**, the free conversion audit, the lead-gen tool that feeds Studio.
-- **Conversion OS** (this repo) is parent-branded for now: the operating system Conversion System runs on and offers. If it ships as a standalone product later, it earns its own visual language and Conversion System stays the parent.
+- **Conversion OS**, the self-serve business OS, the flagship operators run their own business on.
+- **Conversion Skills** (this repo): the 99-skill toolkit and marketplace for operators and agencies. It powers and complements Conversion OS, and carries the agency Client OS and delivery skills. Parent-branded for now; product wordmark `CONVERSION / SKILLS`.
 
 Shared across the house: the hiring bar, the pricing philosophy (fixed, named, refundable), the stance on AI as a tool not the product. Not shared: typefaces, color palettes, component kits, voice, logo systems.
 

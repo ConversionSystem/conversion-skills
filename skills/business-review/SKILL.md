@@ -34,7 +34,7 @@ Turn the KPI ledger into a period scorecard that makes the compounding visible: 
 7. Build the **SCORECARD**: one table, every metric, columns `metric | baseline | current | target | period delta | direction | source row`. Direction is `on-track`, `behind`, or `regressed`. Every value traces to a real ledger row · never invent a number. If a metric has no fresh row, mark it `stale` and say so; do not fabricate.
 8. Write **BY-AREA** across acquisition, conversion, retention, content, and pipeline: for each area, what moved and why, citing the specific deliverable(s) (path-referenced) that drove it.
 9. Write the **NARRATIVE**: exactly three evidence-linked wins (each tied to a metric and a deliverable), what stalled, and an honest read · lead with what is behind, not what looks good.
-10. Write **DO-NEXT**: exactly three highest-leverage moves. Each names a measurable goal (a specific metric and target) and a concrete Conversion OS skill to run to get there.
+10. Write **DO-NEXT**: exactly three highest-leverage moves. Each names a measurable goal (a specific metric and target) and a concrete Conversion Skills skill to run to get there.
 11. If a prior snapshot exists, open the report with the trend versus last review (which metrics improved, held, or regressed since the last snapshot) before the scorecard.
 12. Write the report to `Operations/reviews/{date}-business-review/{date}-business-review.md` with `generated: true` in frontmatter. Write the snapshot `data/baseline.json` beside it as the artifact the next review diffs against.
 13. Append a one-line entry to today's `Daily/YYYY-MM-DD.md` noting the review was generated and the headline read.

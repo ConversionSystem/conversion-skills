@@ -36,7 +36,7 @@ Read closed deals and the conversations behind them, surface the patterns that d
    - **Source** · which lead sources convert vs leak.
 6. **Contrast won vs lost.** For the top patterns, name what the won deals did differently (faster follow-up, the right champion, a specific proof point). This is where the recommendations come from.
 7. **Write recommendations.** For each pattern, write one concrete, testable action to lift win-rate · pricing tweak, objection-handling script, source reallocation, ICP tightening · each tied to its citing deals and ranked by expected impact.
-8. **Name the next play.** Recommend the single highest-leverage next action and the exact Conversion OS skill to run it (e.g. `case-study` to convert a winning proof point, `pipeline-update` to re-stage at-risk deals, `email-sequence` to script an objection rebuttal, `business-review` to fold findings into strategy).
+8. **Name the next play.** Recommend the single highest-leverage next action and the exact Conversion Skills skill to run it (e.g. `case-study` to convert a winning proof point, `pipeline-update` to re-stage at-risk deals, `email-sequence` to script an objection rebuttal, `business-review` to fold findings into strategy).
 9. **Write the report.** Solo/Team: `Operations/reviews/{date}-win-loss.md` with `generated:true`. Agency: `Clients/{slug}/reviews/{date}-win-loss.md`, `confidential:true`, in the client's voice. Include universal frontmatter and a sources list of every deal id cited.
 10. **Append the ledger row.** Add one APPEND-ONLY win-rate row to the KPI ledger (path per profile). Never edit or reorder prior rows.
 

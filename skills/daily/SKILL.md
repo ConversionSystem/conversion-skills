@@ -5,7 +5,7 @@ description: Runs your operating rhythm for resume morning triage evening and sa
 
 # Daily
 
-The operating rhythm of Conversion OS. One intent-routed entry point for resuming context, composing the day, clearing the inbox, closing the day, and logging a session · all reading and writing `Daily/`.
+The operating rhythm of Conversion Skills. One intent-routed entry point for resuming context, composing the day, clearing the inbox, closing the day, and logging a session · all reading and writing `Daily/`.
 
 ## When to use
 

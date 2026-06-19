@@ -38,7 +38,7 @@ Sweep the active book of accounts for early warning signs of churn · usage drop
    - **Open escalation** · an unresolved complaint, bug, or dissatisfaction in the notes.
    - **Renewal risk** · renewal approaching (default: within 60 days) with weak or behind metrics.
 6. Assign a **risk level** per account · `high`, `medium`, or `low` · driven by signal count and severity (an approaching renewal with weak metrics or an open escalation lifts an account toward `high`). Never invent a metric to justify a level; if evidence is thin, mark the signal `inferred` and say so.
-7. For each at-risk account, write a **recommended save play**: the concrete next move (check-in, value recap, goal reset, escalation fix, renewal conversation) named to a specific Conversion OS skill or owner action where it fits. Save plays are recommendations only · never executed here.
+7. For each at-risk account, write a **recommended save play**: the concrete next move (check-in, value recap, goal reset, escalation fix, renewal conversation) named to a specific Conversion Skills skill or owner action where it fits. Save plays are recommendations only · never executed here.
 8. Compute the roll-up: `at-risk-count` (high + medium) and `at-risk-value` (sum of those accounts' values), each tagged with its `source` and a `confidence`.
 
 ### Phase 3 · WRITE + ESCALATE

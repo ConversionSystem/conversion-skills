@@ -1,18 +1,18 @@
 {
-  "name": "conversion-system",
+  "name": "conversion-skills",
   "owner": {
     "name": "Conversion System",
     "email": "steve@conversionsystem.com"
   },
   "metadata": {
-    "description": "Conversion OS by Conversion System. An AI operating system: persistent business memory, a daily operator, and 99 skills.",
+    "description": "Conversion Skills by Conversion System. 99 Claude skills for business operators and agencies: audits, prospecting, content, a daily operator, and a firewalled client toolkit.",
     "version": "2.0.0-alpha.1"
   },
   "plugins": [
     {
-      "name": "conversion-os",
+      "name": "conversion-skills",
       "source": "./",
-      "description": "Conversion OS. Persistent business memory, a daily operator, and 99 skills. Markdown and git, no database.",
+      "description": "Conversion Skills. 99 skills that run your growth and compound: SEO, ads, sales, content, plus the operator and the agency client firewall.",
       "version": "2.0.0-alpha.1",
       "author": { "name": "Conversion System", "email": "steve@conversionsystem.com" }
     }

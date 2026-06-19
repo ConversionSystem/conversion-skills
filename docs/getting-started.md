@@ -1,6 +1,6 @@
 # Getting Started
 
-Conversion OS is a folder of markdown files that Claude reads and writes. It holds your business context, a memory ledger, and 44 skills that do real work and record what moved. No database. No platform. You own the files.
+Conversion Skills is a set of 99 Claude skills. Run `/setup` and they build your business a vault: a folder of markdown files Claude treats as persistent memory, your context plus a memory ledger. The skills do real work and record what moved. No database. No platform. You own the files.
 
 This guide takes you from nothing to a populated, governed vault in about 10 minutes.
 

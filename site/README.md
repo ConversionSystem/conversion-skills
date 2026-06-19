@@ -1,4 +1,4 @@
-# Conversion OS landing page
+# Conversion Skills landing page
 
 One self-contained page. No build step, no framework, no dependency. Brand: Inter Tight, JetBrains Mono, the six colors, the wordmark with the Orange slash. The copy source of truth is `docs/sales-page.md`. Enforced by `scripts/check-brand.sh` like the rest of the surface.
 

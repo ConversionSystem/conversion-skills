@@ -27,7 +27,7 @@ We build it, you run it.
 - Monthly review and tuning. Cancel any time, you keep the vault.
 
 ## Agency License · $1,000 per month
-Deploy Conversion OS for your clients.
+Deploy Conversion Skills for your clients.
 - Unlimited client vaults, firewalled.
 - The Client OS, the proposal and invoice templates, the delivery skills.
 - Onboarding for your team.

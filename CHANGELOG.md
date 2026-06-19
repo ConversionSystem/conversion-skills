@@ -2,9 +2,9 @@
 
 ## 2026-06-18
 
-Conversion OS v2, built and branded.
+Conversion Skills v2, built and branded.
 
-- The operating system: root and folder routers, the `_system/` config, the append-only KPI ledger, the agency firewall.
+- The vault engine: root and folder routers, the `_system/` config, the append-only KPI ledger, the agency firewall.
 - 99 skills: 7 core modules, 9 operating routines, 83 delivery skills across ads, SEO, sales, content, YouTube, creative, design, and utilities. Indexed in `SKILLS.md`, documented in `docs/commands.md` (11 categories).
 - 3 example vaults: solo, team, agency (two firewalled clients).
 - 21 document templates, including the agency proposal and invoice.

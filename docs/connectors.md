@@ -1,6 +1,6 @@
 # Connectors and the Operator
 
-Conversion OS runs with zero connectors by default. You paste, you upload, the skills work. Connectors are optional accelerators that let the OS read from your live tools and let the daily operator keep the vault current on its own.
+Conversion Skills runs with zero connectors by default. You paste, you upload, the skills work. Connectors are optional accelerators that let the OS read from your live tools and let the daily operator keep the vault current on its own.
 
 ## What a connector is
 

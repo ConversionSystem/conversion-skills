@@ -1,14 +1,14 @@
 ---
 name: setup
-description: Turn an empty folder into a personalized governed Conversion OS vault with a 10-minute first win, triggered by setup conversion os, initialize my vault, get started, onboard me, build my conversion os, first-time setup, or scaffold my workspace.
+description: Turn an empty folder into a personalized governed Conversion Skills vault with a 10-minute first win, triggered by setup conversion skills, initialize my vault, get started, onboard me, build my conversion skills, first-time setup, or scaffold my workspace.
 ---
 
-# Conversion OS Setup
-Turns an empty (or partial) folder into a personalized, governed Conversion OS vault that delivers a 10-minute first win, then deepens over time.
+# Conversion Skills Setup
+Turns an empty (or partial) folder into a personalized, governed Conversion Skills vault that delivers a 10-minute first win, then deepens over time.
 
 ## When to use
 - The vault is empty or missing its root `CLAUDE.md` and `_system/` and the user wants to get started.
-- The user says "set up Conversion OS", "initialize my vault", "onboard me", "build my workspace", or runs this on a fresh synced folder.
+- The user says "set up Conversion Skills", "initialize my vault", "onboard me", "build my workspace", or runs this on a fresh synced folder.
 - An existing vault needs re-detection, profile selection, or a guided re-seed of thin context.
 - Not for routine work once the vault exists · use the daily, content, or pipeline modules instead.
 

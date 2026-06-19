@@ -1,6 +1,6 @@
 ---
 name: team
-description: Roll Conversion OS across a team with sync setup, person seats, AI access scoping, offboarding, and access audits · use when adding a teammate, choosing a sync method, scoping who sees which clients, removing someone, or reviewing team permissions.
+description: Roll Conversion Skills across a team with sync setup, person seats, AI access scoping, offboarding, and access audits · use when adding a teammate, choosing a sync method, scoping who sees which clients, removing someone, or reviewing team permissions.
 ---
 
 # Conversion Team OS
