@@ -28,11 +28,11 @@ Two ways. Pick one.
 ### B. As a Claude Code plugin
 1. Add the marketplace:
    ```
-   /plugin marketplace add ConversionSystem/OS-AI
+   /plugin marketplace add ConversionSystem/conversion-skills
    ```
 2. Install the plugin:
    ```
-   /plugin install conversion-os@conversion-system
+   /plugin install conversion-skills@conversion-skills
    ```
 3. Open an empty folder and run `/setup`.
 
