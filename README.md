@@ -1,6 +1,6 @@
 # Conversion Skills
 
-**CONVERSION / SKILLS** · by Conversion System. Our toolkit: 99 Claude skills that run your growth and remember what moved. It powers Conversion OS, or runs on its own.
+**CONVERSION / SKILLS** · by Conversion System. Our toolkit: 104 Claude skills that run your growth and remember what moved. It powers Conversion OS, or runs on its own.
 
 Every business runs on context. Who you are, what you sell, who you serve, what you decided, what moved the number. Most of it evaporates. Conversion Skills keeps it. Plain markdown in your own folder, versioned with git. The AI is the runtime. The files are the database. Git is the journal. No platform. No lock-in.
 
@@ -44,7 +44,7 @@ Start with `docs/`.
 skills/      104 skills (7 modules, 9 workflows, 88 delivery)
 templates/   21 document templates Setup copies in
 examples/    3 seeded vaults: solo, team, agency
-scripts/     5 gates: clean-room, budgets, secrets, firewall, brand
+scripts/     6 gates: clean-room, budgets, secrets, firewall, brand, sections
 assets/      brand-tokens.css
 site/        the landing page, self-contained HTML
 docs/        getting-started, commands, daily-use, setup, connectors, and more
@@ -52,6 +52,6 @@ BRAND.md     the Conversion System brand, enforced by scripts/check-brand.sh
 ```
 
 ## Receipts
-104 skills. 5 gates green on every push. 0 em-dashes. 0 cross-client leaks (a planted leak was caught and removed in test V4).
+104 skills. 6 gates green on every push. 0 em-dashes. 0 cross-client leaks (a planted leak was caught and removed in test V4).
 
 By Angel Castro · AI & Automation Lead · linkedin.com/in/anglcstr
