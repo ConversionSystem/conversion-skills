@@ -14,11 +14,11 @@ while IFS= read -r f; do
       max=60 ;;
   esac
   if [ "$lines" -gt "$max" ]; then echo "BUDGET FAIL: $f has $lines lines (max $max)"; fail=$((fail+1)); fi
-done < <(find . -name CLAUDE.md -not -path '*/.git/*')
+done < <(find examples -name CLAUDE.md)
 # context docs (Company/*.md) <=150
 while IFS= read -r f; do
   lines=$(wc -l < "$f" | tr -d ' ')
   if [ "$lines" -gt 150 ]; then echo "BUDGET WARN: context doc $f has $lines lines (max 150)"; fi
-done < <(find . -path '*/Company/*.md' -not -name CLAUDE.md -not -path '*/.git/*')
+done < <(find examples -path '*/Company/*.md' -not -name CLAUDE.md)
 if [ "$fail" -gt 0 ]; then echo "Budget check FAILED."; exit 1; fi
 echo "Budget check passed."

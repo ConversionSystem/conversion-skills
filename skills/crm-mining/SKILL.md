@@ -51,6 +51,34 @@ Read the pipeline and a CRM export to surface hidden revenue · stalled deals to
 - LEDGER INTEGRITY: append-only; never edit or reorder prior rows; use only the locked columns and confidence vocabulary.
 - State the stalled/dormant/cold thresholds used so the list is reproducible and auditable.
 
+## Red flags
+- Marking a deal "stalled" or an account "dormant" without the last-activity date that crosses the threshold (no date cited = hygiene gap, not a signal).
+- Assigning a suggested play that says "follow up" or "check in" instead of a concrete move tied to the record (the stalled proposal, the unbought offer).
+- Filling a blank owner, amount, or close date with a guessed value instead of flagging the row as a hygiene gap.
+- Ranking opportunities without showing the score inputs (value, fit, recency), so the order can't be reproduced.
+- Recommending an upsell against an offer the account already has, or that isn't in `Company/offers.md`.
+- Surfacing a churned-for-cause or hard-"no" account as a revival without noting the blocker.
+- Writing the action list without stating the stalled/dormant/cold thresholds used for the run.
+
+## Verification
+- [ ] Every flagged opportunity cites the record or export row it came from (account, stage, last-activity date).
+- [ ] The stalled / dormant / cold thresholds used are stated in the output, with their source (`_system/config.md`, `Company/strategy.md`, or defaults).
+- [ ] Blank owners, dates, and amounts are listed as hygiene gaps, not silently filled.
+- [ ] Every opportunity shows its score inputs (value × fit × recency, minus blockers) so the ranking is reproducible.
+- [ ] Upsell/expansion plays reference a specific offer in `Company/offers.md` the account does not already hold.
+- [ ] Two ledger rows appended (`opportunities-found`, `revivable-value`), each citing the export filename as source with a confidence in {confirmed, reported, inferred, stale}; no prior row edited or reordered.
+- [ ] Nothing sent, emailed, posted, or changed in the source CRM; every outreach draft carries `status:draft` (agency outputs `confidential:true`).
+- [ ] Agency runs read only the active `Clients/{slug}/`; no sibling client touched.
+
+## Rationalizations
+| Rationalization | Reality |
+|---|---|
+| "The export has blank owners and dates, I'll just infer them to keep the list clean." | Inferred fields become fake commitments. Blank = a hygiene finding the rep must fix, not a value to invent. |
+| "This account obviously went cold, I don't need the date." | No date, no threshold crossing, no claim. An uncited "stalled" is a guess that breaks reproducibility. |
+| "'Follow up' is a fine play, the rep knows the context." | A generic play gets ignored. Name the stalled proposal or the unbought offer, or the list does no work. |
+| "I'll skip the ledger rows, the action list is the real deliverable." | No baseline means the next run can't show recovered value. Two rows, source-cited, or the win is invisible. |
+| "It's just an outreach draft, sending one to the warmest account proves it works." | One send breaks the firewall. Draft-only, status:draft, a human ships every touch. No exceptions. |
+
 ## References
 - `_system/rules.md` and `_system/config.md` · profile, thresholds, routing.
 - `Company/icp.md`, `Company/offers.md` · fit and expansion logic.

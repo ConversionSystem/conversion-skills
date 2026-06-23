@@ -53,6 +53,33 @@ Turn the KPI ledger into a period scorecard that makes the compounding visible: 
 - Respect the Agency firewall · read only the active vault context; never read sibling `Clients/{slug}/` data into a shared review.
 - Frontmatter on the report carries the universal keys with `generated: true`; the report is regenerated on re-run, never patched by hand.
 
+## Red flags
+- Writing a scorecard number that no `Memory/kpi-ledger.md` row supports, instead of marking the metric `stale`.
+- Leading the NARRATIVE with wins while a regressed metric sits lower in the report, or quietly omitted.
+- Attributing BY-AREA movement to a deliverable without a path-referenced `data/baseline.json` to cite.
+- Producing more or fewer than three NARRATIVE wins, three DO-NEXT moves, or skipping a metric in the SCORECARD.
+- A DO-NEXT move with no measurable goal (named metric + target) or no concrete Conversion Skills skill to run.
+- Editing, reordering, or appending to `Memory/kpi-ledger.md`, or hand-patching a `generated: true` report on re-run.
+
+## Verification
+- [ ] Every SCORECARD row has a `source row` pointing at a real `Memory/kpi-ledger.md` entry; untraceable metrics are marked `stale`, not estimated.
+- [ ] Each BY-AREA claim cites the specific deliverable path (`Projects/{slug}/...` or `Content/{slug}-{date}/...`) that drove the movement.
+- [ ] NARRATIVE has exactly three evidence-linked wins, names what stalled, and leads with what is behind.
+- [ ] DO-NEXT has exactly three moves, each with a named metric, a target, and a concrete skill to run.
+- [ ] `Memory/kpi-ledger.md` is byte-for-byte unchanged; the only writes are the report, its `data/baseline.json`, and one Daily Activity line.
+- [ ] If a prior snapshot exists, the report opens with the TREND versus last review before the SCORECARD.
+- [ ] Report frontmatter carries `generated: true`; nothing was published or sent, the output is a draft review file.
+- [ ] Agency firewall held: no sibling `Clients/{slug}/` data was read into a shared review.
+
+## Rationalizations
+| Rationalization | Reality |
+|---|---|
+| "The ledger row is missing but I know the number is roughly right." | Mark it `stale`. A guessed figure in a board read is a number someone will plan against and miss. |
+| "Last month was rough, lead with the wins so it reads well." | Lead with what is behind. Burying the regression is how it compounds another period unnoticed. |
+| "I'll just nudge this stale ledger row so the scorecard is clean." | Reads only. Touch the ledger and the next review's diff baseline is corrupted; the firewall is the whole point. |
+| "Movement is obviously from that campaign, no need to cite the baseline." | Cite the `baseline.json` path. Uncited attribution is a story, and stories do not survive the next planning session. |
+| "Four wins is better than three, more good news." | Exactly three. The fixed count forces a ranked, honest read instead of a padded highlight reel. |
+
 ## References
 - `Memory/kpi-ledger.md` (append-only KPI source, confidence in confirmed/reported/inferred/stale)
 - `Company/strategy.md` (priorities and targets)

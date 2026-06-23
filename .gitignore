@@ -4,3 +4,5 @@
 node_modules/
 *.log
 _system/audit/*.log
+vault/
+.obsidian/

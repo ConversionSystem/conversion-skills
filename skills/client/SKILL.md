@@ -80,6 +80,33 @@ Resolve the active client first. Match the requested name to exactly one existin
 - Slugs/homes: kebab-case slug, ISO dates, one concept per file. Refuse duplicate slugs at onboarding.
 - Budgets: respect operator read/write/transcript/email/dm/housekeeping caps in `_system/config.md`; stop cleanly when a cap is hit.
 
+## Red flags
+- You are about to open a second `Clients/{slug}/` folder in one turn, or you pulled a fact, name, or asset from a client other than the active one.
+- You started a flow without resolving the active client to exactly one slug, or you guessed the slug instead of asking once.
+- A REPORT or BRIEF states progress against a KPI with no fresh `goals.md` row behind it, or omits the confidence value.
+- You appended a decision or metric row without a `source`, or you edited/reordered a prior `goals.md` or `decisions.md` row instead of appending.
+- A recap email, DM, or deliverable is heading out without a `status:draft` flag and a human gate, or you are about to change pricing, permissions, or send anything client-facing.
+- An Ops or Memory rollup carries a single client's raw figures instead of an anonymized aggregate, or a new client file is missing `confidential:true`.
+
+## Verification
+- [ ] Active client resolved to exactly one existing slug (or NEW proposed); on ambiguity, asked once or filed to `Inbox/` and stopped.
+- [ ] Only the active `Clients/{slug}/` was read or written this turn; no sibling client folder was opened.
+- [ ] Every metric or claim cites its `source`, carries a `confidence` value, and goals with no fresh row are flagged stale, not invented.
+- [ ] `goals.md` and `decisions.md` were appended only, with the full column set; no prior row edited, reordered, or deleted.
+- [ ] Every file written carries universal frontmatter and `confidential:true`; outbound items are `status:draft`, nothing sent or published.
+- [ ] Cross-client Ops/Memory outputs are anonymized aggregates; no single client's raw data appears in another's view.
+- [ ] Profile gate checked (Agency only); operator budgets respected and the run stopped cleanly if a cap was hit.
+- [ ] On ARCHIVE: export bundle plus `EXPORT.md` produced, inbound links repointed, all files set `status:archived`, case-study candidate left `status:draft` pending sign-off.
+
+## Rationalizations
+| Rationalization | Reality |
+|---|---|
+| "I remember this number from their last review, no need to open `goals.md`." | Numbers come from a cited ledger row or they are stale. Memory is not a source; label it `inferred` and flag it. |
+| "Just this once I'll peek at the sibling client to compare results." | The firewall is the whole product. One peek leaks confidential data and breaks the contract. Use anonymized Ops aggregates instead. |
+| "Two clients match but they clearly meant this one, I'll proceed." | Clearly to you, not to the file tree. Wrong slug writes to the wrong account. Ask once, then act. |
+| "The recap is obvious, I'll just send it to keep things moving." | Sending is a human gate, always. Draft it `status:draft` and escalate to the contact in `_system/config.md`. The cost of one wrong send is the account. |
+| "The report reads better with steady progress, I'll smooth the gap." | A goal without a fresh row is stale, not progressing. Inventing a number is the one failure that ends the relationship. Flag it. |
+
 ## References
 - `_system/config.md` (Agency profile flag, escalation contact, operator budgets), `_system/permissions.md`, `_system/rules.md`.
 - `Library/playbooks/`, `Library/templates/`, `Library/prompts/` (shared, non-client assets for DRAFT).

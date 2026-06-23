@@ -66,6 +66,33 @@ Sweep the active book of accounts for early warning signs of churn · usage drop
 - Every `.md` written carries universal frontmatter (type, status, owner, date, reviewed, tags >=2, confidential, source, generated); the report is `generated: true` and regenerated on re-run, never patched by hand.
 - Route outputs to canonical homes; kebab-case slugs and ISO dates throughout.
 
+## Red flags
+- Assigning a `high`/`medium`/`low` risk level off a hunch, without naming the specific signals and a path+date behind each.
+- Writing a save play that "checks in" or "emails" the customer, instead of a recommendation a human runs.
+- Reading a sibling client under `Clients/` (Agency) to compare or borrow context, breaking the active-client firewall.
+- Reporting an `at-risk-count` or `at-risk-value` with no baseline row and no `source`/`confidence` tag.
+- Calling a metric `behind` or `regressed` when the ledger never tracked it, or editing the ledger instead of appending the two rows.
+- Skipping CHANGE-SINCE-LAST on a re-run when a prior `{prev-date}-churn-watch.md` exists, so worsened/recovered accounts go unflagged.
+
+## Verification
+- [ ] Every signal cites a real file (path + date) or a ledger row; none invented, thin evidence marked `inferred`.
+- [ ] Every risk level traces to its named signals, not a vibe; severity logic (renewal + weak metrics, open escalation) is shown.
+- [ ] Two ledger rows appended (`at-risk-count`, `at-risk-value`), exact column order, each with `source` and a `confidence` from {confirmed, reported, inferred, stale}; no prior row edited or reordered.
+- [ ] Report written to the correct home (`Operations/reviews/` Solo/Team), `generated: true`, universal frontmatter, sections in order.
+- [ ] Agency firewall held: only the ACTIVE `Clients/{slug}/` was read, no sibling client; report is `confidential: true`.
+- [ ] Every `high`-risk account escalated to the `_system/config.md` contact, not to the customer.
+- [ ] Daily line appended with at-risk count/value and high-risk names; nothing sent, emailed, posted, or changed on any account.
+- [ ] Every save play is a draft recommendation; no renewal date, account, or customer was touched.
+
+## Rationalizations
+| Rationalization | Reality |
+|---|---|
+| "Usage is obviously down, I don't need to dig up the file." | Cite the path + date or it's a guess. An uncited drop is an unfalsifiable claim a renewal call can't act on. |
+| "This account is clearly cooked, just mark it high." | Risk level is signal count + severity, not a feeling. No named signals, no level. Mark it `inferred` and show the gap. |
+| "I'll just peek at the other client to see what normal looks like." | The firewall is absolute. One sibling read leaks confidential data and burns the engagement. Baseline against the account's own history. |
+| "Renewal's in 3 weeks, I'll just send the check-in myself." | DRAFT-ONLY. The skill recommends; a human runs the play. An autonomous customer touch is the failure mode, not the save. |
+| "I'll fix that stale ledger row while I'm in there." | The ledger is append-only. Editing a prior row destroys the baseline every future watch charts against. Append the two new rows, nothing else. |
+
 ## References
 - `_system/config.md` (escalation contact)
 - `_system/rules.md` (routing + frontmatter, Solo/Team vs Agency)

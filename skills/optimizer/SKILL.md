@@ -72,6 +72,34 @@ Scheduled vault hygiene that audits structure, links, freshness, budgets, firewa
 - **Frontmatter:** enforce the universal keys (`type`, `status`, `owner`, `date`, `reviewed`, `tags`≥2, `confidential`, `source`, `generated`) and the `source`+`confidence` requirement on ledger rows and decision files.
 - **Budgets:** read from `_system/config.md`; stop cleanly when a reads/writes/housekeeping cap is hit and record the remainder in the report.
 
+## Red flags
+- Scoring a category or writing a finding with no `path:` cited, the skill's own "no path, no finding" rule broken mid-run.
+- Editing a `CLAUDE.md` directly instead of rendering a diff and waiting for explicit acceptance.
+- Deleting or moving a file without first grepping the vault for inbound references to that path.
+- Reading a sibling `Clients/{slug}/` to "resolve" a firewall finding, the cross-client leak you are supposed to report.
+- Rewriting a note's substance under the banner of hygiene, or auto-picking a winner on a meaning-bearing conflict instead of proposing a merge.
+- Editing, reordering, or backfilling prior rows in `Memory/kpi-ledger.md` rather than just flagging the format violation.
+- Blowing past a reads/writes/housekeeping cap from `_system/config.md` instead of stopping cleanly and noting the remainder.
+
+## Verification
+- [ ] Every finding cites at least one file path; zero pathless findings shipped.
+- [ ] Firewall (Agency) ran FIRST and any cross-client leak is reported before all other categories, with no sibling `Clients/` read to resolve it.
+- [ ] Score is recorded with firewall failures weighted to dominate, and before/after metrics are both captured.
+- [ ] No `CLAUDE.md` was auto-edited; every proposed `CLAUDE.md` change exists only as a diff awaiting acceptance.
+- [ ] No delete or move happened without a prior inbound-reference grep; targets with inbound links were downgraded to repoint or routed to `Inbox/`.
+- [ ] Only walked-and-approved fixes were applied; declined findings are recorded as declined, planned findings collected in the action list.
+- [ ] Nothing was published, sent, or deleted autonomously, and no prior `Memory/kpi-ledger.md` row was edited or reordered.
+- [ ] The report `Operations/reviews/{date}-vault-audit.md` is `generated:true` with per-finding disposition, and an audit-trail entry under `_system/audit/` records budgets consumed.
+
+## Rationalizations
+| Rationalization | Reality |
+|---|---|
+| "The dead link is obviously safe to delete, skip the grep." | Skip the grep and you orphan whatever pointed at it. Every delete and move greps inbound references first, no exceptions. |
+| "This `CLAUDE.md` is 30 lines over, I'll just trim it inline." | Auto-editing a router is how the vault silently loses its routing map. Render the diff, get explicit acceptance, never touch it otherwise. |
+| "Two files contradict, I'll keep the newer one and move on." | Picking a winner on a meaning-bearing conflict changes substance, not hygiene. Propose a merge with the loser linked and let the human decide. |
+| "I'll just peek at the other client's folder to confirm the leak." | Reading sibling `Clients/{slug}/` is the exact firewall breach you exist to catch. Report the cross-client reference and stop; never open the sibling. |
+| "I hit the write cap but there are only three fixes left, push them through." | A cap is a hard stop, not a suggestion. Apply nothing past it, note the remainder in the report, and let the next run finish the job. |
+
 ## References
 - `_system/config.md` · operator budgets, active profile, escalation contact.
 - `_system/rules.md` and root `CLAUDE.md` · routing map and canonical homes.

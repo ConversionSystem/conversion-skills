@@ -63,6 +63,33 @@ Phase 6 · Draft-only for outbound:
 - Every written `.md` carries universal frontmatter (type, status, owner, date, reviewed, tags≥2, confidential, source, generated). Route facts to canonical homes; one concept per file; kebab-case slugs, ISO dates.
 - Dedupe escalations against `_system/state/escalations.md` so the same issue never re-pings.
 
+## Red flags
+- Pulling from a connector that is not marked enabled in `_system/connectors.md`, or pulling a category past its budget cap in `_system/config.md` to "finish it off."
+- Writing a synthesis claim into the Daily with no transcript, message, or CRM record behind it, or appending a kpi-ledger row with a blank `source` or `confidence`.
+- Dumping decisions, metrics, or meeting notes inline in the Daily instead of routing them to `Memory/`, `Operations/`, or `Pipeline/`.
+- Editing, reordering, or back-filling an existing kpi-ledger row instead of appending a new one.
+- An outbound email, DM, or post drafted without `status:draft`, or any move to send, publish, delete, or change pricing/permissions without escalating first.
+- Guessing a client or contact for an ambiguous entity instead of dropping it in `Inbox/`, or (Agency) reading across into a sibling `Clients/{slug}/`.
+
+## Verification
+- [ ] Every connector pulled was marked enabled in `_system/connectors.md`; no disabled source was touched.
+- [ ] No category exceeded its cap; any stop is logged as `ran out of budget on {category}` in the synthesis.
+- [ ] Every synthesis claim traces to a specific pulled record (transcript, message, email, CRM/PM item); nothing asserted from memory.
+- [ ] Every kpi-ledger row was APPENDED with all columns filled, including `source` and `confidence` from {confirmed, reported, inferred, stale}; no prior row was edited.
+- [ ] Durable facts were routed to canonical homes (decisions, meetings, tasks, pipeline), not left in the Daily; ambiguous entities went to `Inbox/`.
+- [ ] Every outbound item is `status:draft` and surfaced to the escalation contact; nothing was sent, published, deleted, or changed (pricing/offers/permissions/clients).
+- [ ] Escalations were deduped against `_system/state/escalations.md`; no prior issue re-pinged.
+- [ ] Every written `.md` carries universal frontmatter; Agency runs touched no sibling `Clients/{slug}/`.
+
+## Rationalizations
+| Rationalization | Reality |
+|---|---|
+| "The budget cap is too low to cover everything today, I'll just go over this once." | Caps are hard. Stop the category and log `ran out of budget on {category}`. Silently blowing the cap is how a run balloons and nobody trusts the next one. |
+| "This metric is obviously up, I'll log the row and backfill the source later." | A ledger row with no `source` and `confidence` is noise the next run can't reconcile. No source, no row. |
+| "It's a tiny reply, sending it saves the human a step." | Outbound is draft-only, always. One autonomous send to the wrong contact costs more than every step you saved combined. |
+| "This decision is small, I'll just note it in the Daily." | The Daily is not a canonical home. Unrouted facts vanish at the next synthesis; route it to `Memory/decisions/{slug}.md` with source and confidence. |
+| "I'm fairly sure this note belongs to that client, I'll file it there." | Fairly sure is a guess. Guessing breaks the Agency firewall and mis-files records. Ambiguous entities go to `Inbox/`, never a `Clients/{slug}/` you inferred. |
+
 ## References
 - `references/connectors.md` · per-connector pull recipes, auth, and category budget mapping.
 - `_system/connectors.md` · which connectors are ENABLED in this vault.

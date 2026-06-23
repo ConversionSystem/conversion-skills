@@ -50,6 +50,33 @@ Assess the HEALTH of the pipeline (not just its data) and produce a forecast plu
 - VOICE: load `Library/styles/brand-voice.md` and `Company/brand.md` first (Agency: `Clients/{slug}/context/brand.md`) and write the review in the business's voice.
 - DATES & ROUTING: ISO dates, kebab-case slugs, canonical homes only.
 
+## Red flags
+- Reporting a coverage ratio while no revenue target was found in strategy.md, instead of flagging that coverage cannot be scored.
+- Quoting a weighted forecast or win-rate without the ledger history to back the stage probabilities, and not marking them confidence:inferred.
+- Citing a pipeline-value or stage total that silently includes deals missing a stage, value, or close date instead of excluding them as incomplete.
+- Naming a stalled deal without its idle-day count and owner, or flagging aging without stating the sales-cycle threshold you measured against.
+- Listing more than three "highest-leverage actions," or an action that does not name the specific deals/accounts behind it.
+- An Agency run where you read a sibling client's pipeline to benchmark, or the review is not marked confidential:true.
+
+## Verification
+- [ ] Every quantitative claim (coverage, conversion, forecast, concentration, source mix) cites the named deals/accounts behind it.
+- [ ] The revenue target was pulled from strategy.md (or its absence flagged as a finding and coverage left unscored).
+- [ ] Incomplete deals are listed as data-quality gaps and excluded from all quantitative claims, not guessed.
+- [ ] The forecast shows all three numbers: best-case (open total), weighted, and commit (late-stage only).
+- [ ] Stage probabilities and win-rate carry a confidence value, marked inferred where ledger history is thin.
+- [ ] Exactly three highest-leverage actions, each naming the deals behind it and its expected effect on the number.
+- [ ] Three ledger rows appended (pipeline-value, weighted-forecast, win-rate), each with source:{date}-pipeline-review.md and a confidence; no prior row edited or reordered.
+- [ ] Nothing was mutated: deals.md untouched, no stage changed, no prospect contacted; output is a draft review (Agency: confidential:true, firewall held).
+
+## Rationalizations
+| Rationalization | Reality |
+|---|---|
+| "No target in strategy.md, but 3x of last quarter is close enough to score coverage." | Inventing the denominator fakes the whole ratio. State coverage cannot be scored and flag the missing target. |
+| "Two deals are missing values, I'll estimate them so the total isn't off." | A guessed value contaminates pipeline-value, the forecast, and concentration. Mark them incomplete, exclude, list the gap. |
+| "No ledger win-rates, so I'll use standard stage probabilities and call it the forecast." | Default probabilities are inferred, not observed. Mark confidence:inferred or the number reads as trustworthy when it is not. |
+| "I found five great moves, capping at three loses value." | Five actions is a list, not a decision. Three forces the leverage call; the other two dilute what the operator does Monday. |
+| "Faster to fix the obvious stalled deal's stage while I'm in deals.md." | This skill is read-only. One edit and the diagnosis is mutating its own input. Recommend the change; pipeline-update makes it. |
+
 ## References
 - pipeline-update (run first to refresh the data this skill reads)
 - business-review (consumes this review for the periodic roll-up)

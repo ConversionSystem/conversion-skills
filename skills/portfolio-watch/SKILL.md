@@ -67,6 +67,33 @@ Aggregate the whole client book into a single owner-only health board · per-cli
 - Every `.md` written carries universal frontmatter (type, status, owner, date, reviewed, tags >=2, confidential, source, generated); the report is `generated: true` and `confidential: true`, regenerated on re-run, never patched by hand.
 - Route outputs to canonical homes; kebab-case slugs and ISO dates throughout.
 
+## Red flags
+- A per-client row carries a status, trend, or risk flag with no `goals.md` row or report path behind it (you are narrating, not aggregating).
+- One client's specifics (a named metric, a churn signal, a note) land inside another client's row or another client's folder.
+- You are computing `at-risk-value` or `portfolio-mrr` while one or more clients have a missing value field, and you silently treated it as zero instead of excluding and noting the gap.
+- You inferred a risk level from goals but left the signals unmarked `inferred`, so the board reads as confirmed when it is not.
+- You are drafting or sending a renewal nudge, client email, or account action instead of stopping at an owner-only report.
+- You edited, reordered, or reformatted a prior row in `Memory/kpi-ledger.md` or any `goals.md` rather than appending the three new firm rows only.
+
+## Verification
+- [ ] `_system/permissions.md` was read first and confirmed `role: owner` with `clients: all`; any non-owner run was refused, wrote nothing, and was logged to `_system/audit/`.
+- [ ] Profile is `agency`; on Solo/Team the run stopped and pointed the user to `pipeline-review` or `churn-watch`.
+- [ ] Every per-client status, trend, and risk flag cites a real file (path + date) or an inherited churn-watch report; nothing is asserted from memory.
+- [ ] The three firm numbers (`active-clients`, `at-risk-value`, `portfolio-mrr`) each carry `source` and `confidence`, and any client with a missing value is excluded from the sums with the gap noted.
+- [ ] Three rows appended to `Memory/kpi-ledger.md` in exact column order with a confidence from {confirmed, reported, inferred, stale}; no prior row edited or reordered; no firm metric written into any `goals.md`.
+- [ ] The board lives only at `Operations/reviews/{date}-portfolio.md` with `generated: true` and `confidential: true`; nothing was written inside any `Clients/{slug}/`.
+- [ ] No client was contacted, no renewal changed, no account action taken; the output is a draft for the owner.
+- [ ] One line appended to `Daily/YYYY-MM-DD.md` and the headline returned to the owner (three numbers, high-risk clients, next renewals).
+
+## Rationalizations
+| Rationalization | Reality |
+|---|---|
+| "The owner asked verbally, I can skip the permissions.md check this once." | Read the gate file every run. The verbal ask is not the gate; a member impersonating an owner ask is exactly what the gate stops. |
+| "This client's value is blank, I'll estimate it so the MRR sum looks complete." | An invented number poisons the firm ledger and every re-run that charts against it. Exclude the client, note the gap. |
+| "I remember this account is shaky, I'll flag it high-risk without digging up the report." | A flag with no path is a guess wearing a label. Cite the churn-watch report or mark the goals-derived signal `inferred`. |
+| "It's faster to drop one client's metric note into the other's row for context." | That is the leak the skill exists to prevent. Each row holds only that client's own data; cross-client specifics never travel. |
+| "Renewal is 10 days out and metrics are weak, I'll just queue the nudge." | This skill stops at the board. Drafting or sending any client touch is a human's call; you observe and report, nothing else." |
+
 ## References
 - `_system/permissions.md` (owner gate · required; role/clients check)
 - `_system/config.md` (firm context, escalation contact)

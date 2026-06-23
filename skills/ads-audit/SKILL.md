@@ -51,5 +51,32 @@ Audit a paid-ads account or set of campaigns (Google, Meta, or LinkedIn) for was
 - CONNECTORS: ad-platform connectors are OPTIONAL. Default to provided exports or a described setup. Only use a connector if one is registered in `_system/connectors.md` and the user has enabled it, and even then only to READ.
 - LEDGER: append-only with the exact columns; confidence in {confirmed, reported, inferred, stale}; never edit or reorder prior rows.
 
+## Red flags
+- Scoring account structure, targeting, or bidding as a problem with no campaign name, search term, or CSV row cited as evidence.
+- Quoting a CPA, ROAS, or wasted-spend number that no `data/` export actually contains (estimating a missing metric instead of marking it unavailable).
+- Writing "est. impact" on a finding without stating the basis (which segment, which spend, what math).
+- Judging ad creative or messaging before brand voice is loaded, or judging it against generic ad rules instead of the offer.
+- Severity inflation: most findings tagged "high" with no ranking that separates a six-figure leak from a naming nit.
+- Recommending a specific bid, budget, or status change as if you will apply it, instead of leaving it as a human decision.
+
+## Verification
+- [ ] Every finding cites a `source`: the export filename or the described-setup note in `brief.md`.
+- [ ] Baselines table is built only from present fields; missing revenue/conversion values are labeled unavailable, not estimated.
+- [ ] Each finding row carries issue, severity, evidence-with-source, fix, and est. impact (with its basis).
+- [ ] Findings are sorted by severity then estimated impact, and a recommended action order is listed.
+- [ ] Report frontmatter is `status:draft` and `generated:true` (and `confidential:true` for Agency); nothing was pushed to any ad platform.
+- [ ] Brand voice was loaded before any creative or messaging judgment.
+- [ ] APPEND-ONLY ledger rows were added for each baseline (wasted-spend, cac/cpa, roas, ctr, conversion-rate) with `source` and `confidence` in {confirmed, reported, inferred, stale}; no prior row edited or reordered.
+- [ ] Agency: work stayed inside the active client's `Clients/{slug}/` workspace; no sibling client was read.
+
+## Rationalizations
+| Rationalization | Reality |
+|---|---|
+| "Revenue isn't in the export, I'll estimate ROAS so the table looks complete." | Mark it unavailable. A made-up ROAS gets acted on as fact and sends real budget the wrong way. |
+| "The leak is obvious, I don't need to pull the exact search term or row." | No cited row, no finding. Uncited "obvious" waste is the line that gets challenged and kills the whole report's credibility. |
+| "This bid is clearly wrong, I'll just set the right target-CPA." | DRAFT-ONLY. You diagnose; a human applies. Pushing a bid change is the one move that can torch spend before anyone reviews it. |
+| "I'll skip loading brand voice, bad creative is bad creative." | Voice is the offer's, not yours. Off-voice judgments flag winning ads and miss the ones that actually clash. |
+| "I'll tag everything high severity so nothing important gets missed." | All-high is no ranking. The operator fixes the naming convention first and the six-figure budget leak sits another month. |
+
 ## References
 none

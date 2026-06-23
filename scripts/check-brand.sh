@@ -4,7 +4,7 @@
 # BRAND.md is scanned for em-dashes but exempt from the blocklist scan (it names the list).
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"; cd "$ROOT"
-SURFACE=(skills templates docs site README.md SKILLS.md BRAND.md examples .claude-plugin assets NOTICE)
+SURFACE=(skills templates docs site README.md SKILLS.md BRAND.md GLOSSARY.md examples .claude-plugin assets NOTICE)
 fail=0
 
 # (a) em-dash (U+2014). En-dash (U+2013) in ranges is allowed and not matched here.

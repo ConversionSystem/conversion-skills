@@ -54,6 +54,33 @@ Read closed deals and the conversations behind them, surface the patterns that d
 - LEDGER: the win-rate row is APPEND-ONLY with the exact columns; never edit or reorder prior rows.
 - THIN DATA: if won+lost is too small for a stable rate or a pattern rests on a single deal, label it inferred/stale and recommend collecting more before acting.
 
+## Red flags
+- Stating a win or loss reason that is not written in any cited deal id, account note, or meeting record.
+- Reporting a win-rate without showing the won and lost row counts behind it.
+- Calling something a pattern off a single deal instead of the 2+ cited deals the cluster step requires.
+- Writing a recommendation that has no deal ids tied to it, or that is not testable.
+- Quietly extrapolating a rate from a thin sample without labeling it inferred or stale.
+- Reading a sibling client's pipeline to "compare" while operating inside an active client workspace (agency).
+
+## Verification
+- [ ] Every pattern and every number cites the deal id(s) it came from; nothing is inferred from a silent record.
+- [ ] Win-rate is shown as won / (won + lost) with the raw row counts, scoped to the stated window.
+- [ ] Every pattern rests on 2+ cited deals; single-deal patterns are dropped or labeled inferred.
+- [ ] Each recommendation is concrete, testable, ranked by impact, and tied to its citing deals.
+- [ ] Thin samples (low won+lost, or a one-deal pattern) are flagged inferred/stale, not stated as fact.
+- [ ] The report is DRAFT-only: no prospect contacted, no deal re-staged, no pricing changed, nothing sent.
+- [ ] One APPEND-ONLY ledger row was added with source `Pipeline/deals.md ({window})` and a confidence value; no prior row edited or reordered.
+- [ ] Agency: output is `confidential:true`, in the client's voice, and only the active `Clients/{slug}/` workspace was read.
+
+## Rationalizations
+| Rationalization | Reality |
+|---|---|
+| "We obviously lost that one on price, everyone knows it." | If no cited deal record says price, it is a guess. Guesses sent as findings get acted on and burn real budget. |
+| "Only 6 deals closed but the trend is clear." | 6 deals is not a stable rate. Label it inferred, show the counts, recommend collecting more before anyone changes pricing or ICP. |
+| "One deal proves the competitor pattern, write it up." | A pattern needs 2+ cited deals. One deal is an anecdote, and a play built on it costs more than it returns. |
+| "Quick win-rate number, skip listing the counts." | A rate with no won/lost counts is unauditable and hides thin data. Always show the rows. |
+| "I'll just re-stage the at-risk deals while I'm in here." | This is DRAFT-only. Touching the live CRM is a human's call; the skill stops at the report. |
+
 ## References
 - `Pipeline/deals.md`, `Pipeline/accounts/`, `Operations/meetings/`, `Memory/decisions/`
 - `Company/icp.md`, `Company/offers.md`, `Company/competitors.md`
