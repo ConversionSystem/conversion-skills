@@ -12,7 +12,7 @@ GROUPS = [
         "daily", "weekly-review", "business-review", "pipeline-update",
         "meeting-capture", "project-update", "content-plan", "sop-create", "exec-dashboard"]),
     ("SEO and visibility", [
-        "site-audit", "seo-audit", "seo-optimize", "seo-schema", "seo-programmatic", "seo-compare", "geo-optimize",
+        "site-audit", "web-vitals", "seo-audit", "seo-optimize", "seo-schema", "seo-programmatic", "seo-compare", "geo-optimize",
         "seo-content", "seo-technical", "seo-sitemap", "seo-hreflang", "seo-images", "seo-plan", "seo-competitor-pages"]),
     ("Paid ads", [
         "ads-audit", "ads-plan", "ads-google", "ads-meta", "ads-linkedin", "ads-tiktok", "ads-microsoft",
@@ -35,7 +35,7 @@ GROUPS = [
     ("Build and utilities", [
         "mcp-builder", "agent-builder", "deep-research", "fact-checker", "humanizer", "file-organizer",
         "prompt-master", "process-interviewer", "decision-toolkit", "n8n", "n8n-prd-generator",
-        "course-creator", "website-launch-kit", "frontend-slides"]),
+        "course-creator", "website-launch-kit", "frontend-slides", "trend-scan", "doubt-check", "skill-author"]),
 ]
 
 NOTES = {
