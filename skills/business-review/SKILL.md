@@ -45,6 +45,15 @@ Turn the KPI ledger into a period scorecard that makes the compounding visible: 
 - One appended line in `Daily/YYYY-MM-DD.md` · Daily Activity entry: review generated + headline.
 - No rows added to `Memory/kpi-ledger.md` · the ledger is read here, never written.
 
+## Engine
+This skill ships an optional deterministic engine. When Python 3 is available, run it to compute the scorecard from the ledger instead of by hand:
+
+`python3 <plugin>/skills/business-review/scripts/rollup.py <path-to/Memory/kpi-ledger.md> [baseline.json]`
+
+It reads the ledger (latest row per metric), takes the baseline from `baseline.json` or the first ledger row per metric, and prints a JSON scorecard (metric, baseline, current, target, delta, direction, vs-target). Reads only, writes nothing, no credentials. Shared parsing lives in `skills/_lib/ledger.py`.
+
+If Python is not available or the script is missing, follow the Process by hand. The scorecard is the same either way.
+
 ## Guardrails
 - Reads only, with three exceptions: its own report file, its own `data/baseline.json`, and the one-line Daily Activity entry. Touch nothing else.
 - Never edit, reorder, or append to `Memory/kpi-ledger.md`. Never hand-edit any `generated: true` rollup.
