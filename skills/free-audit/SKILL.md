@@ -80,6 +80,9 @@ Turn a prospect's public URL or focus area into a polished, honest free audit yo
 | "Overstating the severity will make them reply faster." | False urgency is the bait-and-switch the honesty gate exists to stop. It burns trust the moment they verify, and the audit has to stand even if they never buy. |
 | "I'll just email it to the prospect to save a step." | Draft-only, a human sends it. Sending from this skill skips the firewall, the review, and the human in the loop. |
 
+## Orchestration
+Run `agents/judge` on every finding before the audit reaches the prospect; cut what it refutes. See `docs/orchestration.md`.
+
 ## References
 - `Company/brand.md` + `Library/styles/brand-voice.md` (Agency: `Clients/{slug}/context/brand.md`) · sender voice and branding.
 - `Company/offers.md` (Agency: `Clients/{slug}/context/offers.md`) · anchor for the next step.

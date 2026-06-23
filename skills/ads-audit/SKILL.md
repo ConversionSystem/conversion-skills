@@ -78,5 +78,8 @@ Audit a paid-ads account or set of campaigns (Google, Meta, or LinkedIn) for was
 | "I'll skip loading brand voice, bad creative is bad creative." | Voice is the offer's, not yours. Off-voice judgments flag winning ads and miss the ones that actually clash. |
 | "I'll tag everything high severity so nothing important gets missed." | All-high is no ranking. The operator fixes the naming convention first and the six-figure budget leak sits another month. |
 
+## Orchestration
+Fan out the platform specialists in parallel (`agents/ads-audit-{google,meta,platforms}`) for the active platforms, each reading only the exports in `data/`. The main skill merges; then spawn `agents/judge` on every finding and cut the refuted ones before scoring. See `docs/orchestration.md`.
+
 ## References
 none

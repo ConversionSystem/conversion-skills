@@ -94,6 +94,9 @@ Aggregate the whole client book into a single owner-only health board · per-cli
 | "It's faster to drop one client's metric note into the other's row for context." | That is the leak the skill exists to prevent. Each row holds only that client's own data; cross-client specifics never travel. |
 | "Renewal is 10 days out and metrics are weak, I'll just queue the nudge." | This skill stops at the board. Drafting or sending any client touch is a human's call; you observe and report, nothing else." |
 
+## Orchestration
+Fan out one `agents/portfolio-client` per connected client, each reading only its own client (the firewall holds). The owner skill merges the rows into the book; no client's numbers cross into another's. See `docs/orchestration.md`.
+
 ## References
 - `_system/permissions.md` (owner gate · required; role/clients check)
 - `_system/config.md` (firm context, escalation contact)

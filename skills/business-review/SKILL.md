@@ -80,6 +80,9 @@ Turn the KPI ledger into a period scorecard that makes the compounding visible: 
 | "Movement is obviously from that campaign, no need to cite the baseline." | Cite the `baseline.json` path. Uncited attribution is a story, and stories do not survive the next planning session. |
 | "Four wins is better than three, more good news." | Exactly three. The fixed count forces a ranked, honest read instead of a padded highlight reel. |
 
+## Orchestration
+Run `agents/judge` on the scorecard claims before the review is shared; cut what it refutes. See `docs/orchestration.md`.
+
 ## References
 - `Memory/kpi-ledger.md` (append-only KPI source, confidence in confirmed/reported/inferred/stale)
 - `Company/strategy.md` (priorities and targets)

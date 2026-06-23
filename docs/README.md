@@ -9,6 +9,7 @@ Start here.
 - **[connectors.md](connectors.md)** · Connect tools and run the operator. Optional.
 - **[confidentiality.md](confidentiality.md)** · Ownership, the firewall, permissions, secrets.
 - **[instruction-layer.md](instruction-layer.md)** · How routing and the ledger work.
+- **[orchestration.md](orchestration.md)** · How the fan-out audits and the judge work.
 - **[quickstart.md](quickstart.md)** · The 60-second version.
 
 Selling it:

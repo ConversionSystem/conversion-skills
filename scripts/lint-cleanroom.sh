@@ -5,7 +5,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 BANNED='BenAI|benai|system3|Relay\.md|relay-fork|Plot\.md|naveedharri'
-TARGETS=(skills templates examples docs .claude-plugin CLAUDE.md README.md SKILLS.md NOTICE)
+TARGETS=(skills templates examples docs agents .claude-plugin CLAUDE.md README.md SKILLS.md NOTICE)
 hits=0
 for t in "${TARGETS[@]}"; do
   [ -e "$t" ] || continue

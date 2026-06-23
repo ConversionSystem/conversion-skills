@@ -52,5 +52,8 @@ Turn a confirmed result into a draft case study, sourcing every number from the 
 - CONSENT (Agency): set `consent: pending`, anonymize identifying details by default, and do not present the draft as approved for external use until consent is confirmed.
 - Quote stays a placeholder until a real, attributed testimonial is supplied · never fabricate quotes.
 
+## Orchestration
+Run `agents/judge` on every claimed number against its ledger row before the case study ships; cut what it refutes. See `docs/orchestration.md`.
+
 ## References
 none

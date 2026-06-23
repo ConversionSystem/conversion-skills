@@ -12,7 +12,7 @@ GROUPS = [
         "daily", "weekly-review", "business-review", "pipeline-update",
         "meeting-capture", "project-update", "content-plan", "sop-create", "exec-dashboard"]),
     ("SEO and visibility", [
-        "seo-audit", "seo-optimize", "seo-schema", "seo-programmatic", "seo-compare", "geo-optimize",
+        "site-audit", "seo-audit", "seo-optimize", "seo-schema", "seo-programmatic", "seo-compare", "geo-optimize",
         "seo-content", "seo-technical", "seo-sitemap", "seo-hreflang", "seo-images", "seo-plan", "seo-competitor-pages"]),
     ("Paid ads", [
         "ads-audit", "ads-plan", "ads-google", "ads-meta", "ads-linkedin", "ads-tiktok", "ads-microsoft",
