@@ -14,4 +14,4 @@ jobs:
       - name: Install YAML parser
         run: pip install pyyaml
       - name: Validate skills + run governance gates
-        run: ./scripts/sync-skills.sh
+        run: ./scripts/verify.sh
