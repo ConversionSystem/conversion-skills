@@ -1,0 +1,35 @@
+{
+  "skill": "deep-research",
+  "cases": [
+    {
+      "id": "deep-research-vertical-saas-market",
+      "input": "Run the deep-research skill on this question: 'How fast is the vertical-SaaS market for independent law firms growing, and which two or three vendors lead it?' Treat it as scoped (US, 2023 to 2025). Fan out, read sources, verify the load-bearing claims, and write the cited report.",
+      "must": [
+        "opens with a short summary and ranks claims by confidence, so it reads as a synthesis rather than a dump of every source found",
+        "ties each load-bearing claim to a specific source inline, with an access date, and invents no metric, quote, or statistic",
+        "tags every claim high, medium, or low confidence with a one-line reason, and flags low-confidence or unverified claims rather than hiding them",
+        "shows the adversarial check: load-bearing claims were tested against independent sources, not three echoes of one press release",
+        "covers the question from several angles, definition, current state, numbers, counter-evidence, and closes with open questions and gaps",
+        "draws on many distinct sources across different domains, not two or three"
+      ],
+      "auto_checks": [
+        { "id": "many_sources", "type": "min_citations", "min": 8 },
+        { "id": "inline_links", "type": "min_links", "min": 6 },
+        { "id": "confidence_tags", "type": "regex", "pattern": "\\b(high|medium|low)\\b.{0,40}confiden", "flags": "i" },
+        { "id": "open_questions", "type": "requires_sections", "sections": ["open question"] },
+        { "id": "enough_depth", "type": "min_words", "min": 700 },
+        { "id": "no_em_dash", "type": "no_em_dash" },
+        { "id": "no_banned", "type": "no_banned" },
+        { "id": "no_placeholders", "type": "no_placeholders" }
+      ],
+      "dimensions": [
+        { "name": "source quality", "desc": "leans on primary and independent sources, not one vendor's blog restated, and names distinct domains" },
+        { "name": "claim verification", "desc": "load-bearing claims survive an adversarial check against independent sources, and the verdict and confidence are shown" },
+        { "name": "synthesis quality", "desc": "merges claims that agree, ranks by confidence, and reads as a reasoned brief, not a list of what each link said" },
+        { "name": "coverage", "desc": "answers the question from several angles, definition, current state, numbers, and counter-evidence, with gaps named" },
+        { "name": "balance of viewpoints", "desc": "represents counter-evidence and disagreement fairly instead of cherry-picking the sources that confirm one answer" },
+        { "name": "provenance discipline", "desc": "every claim carries a source URL and access date, and anything unsourced is marked unverified rather than asserted" }
+      ]
+    }
+  ]
+}

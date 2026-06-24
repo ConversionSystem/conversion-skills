@@ -1,0 +1,63 @@
+{
+  "skill": "business-review",
+  "cases": [
+    {
+      "id": "business-review-q2-first-run",
+      "input": "Run the business-review skill for 2026-Q2. The vault has a Memory/kpi-ledger.md with rows for visitors, signup-rate, trial-to-paid, MRR, churn-rate, and pipeline-value; Company/strategy.md with the quarter's targets; and a few deliverable data/baseline.json snapshots under Projects/ and Content/. No prior review snapshot exists. Produce the full rollup.",
+      "must": [
+        "presents one SCORECARD table covering every metric in the ledger, not just the ones that improved",
+        "shows each metric as baseline to current to target with a direction of on-track, behind, regressed, or stale",
+        "every scorecard number traces to a real ledger row by its source, and any untraceable metric is marked stale rather than estimated",
+        "leads the narrative with what is behind and names exactly three evidence-linked wins plus what stalled",
+        "gives exactly three do-next moves, each with a named metric, a target, and a concrete skill to run",
+        "invents no traffic, revenue, or conversion figures and adds no new row to the ledger"
+      ],
+      "auto_checks": [
+        { "id": "has_sections", "type": "requires_sections", "sections": ["scorecard", "narrative", "do-next"] },
+        { "id": "scores_direction", "type": "regex", "pattern": "on-track|behind|regressed|stale", "flags": "i" },
+        { "id": "has_table", "type": "regex", "pattern": "\\|.*\\|.*\\|" },
+        { "id": "cites_evidence", "type": "min_citations", "min": 4 },
+        { "id": "enough_depth", "type": "min_words", "min": 400 },
+        { "id": "no_em_dash", "type": "no_em_dash" },
+        { "id": "no_banned", "type": "no_banned" },
+        { "id": "no_placeholders", "type": "no_placeholders" }
+      ],
+      "dimensions": [
+        { "name": "honesty about misses", "desc": "the read leads with what is behind, surfaces every regression by name, and never buries a miss under the wins" },
+        { "name": "evidence traceability", "desc": "each scorecard number points at a real ledger row and each area movement cites the specific deliverable baseline.json path that drove it" },
+        { "name": "rollup clarity", "desc": "the scorecard reads at a glance, baseline to current to target with a clear direction, and every metric is present" },
+        { "name": "decision usefulness", "desc": "the three do-next moves each carry a measurable goal and a named skill, so a reader knows exactly what to run next" },
+        { "name": "no invented numbers", "desc": "nothing is estimated or fabricated; gaps are marked stale and surfaced rather than filled with a plausible figure" }
+      ]
+    },
+    {
+      "id": "business-review-q3-rerun-with-prior-snapshot",
+      "input": "Run the business-review skill for 2026-Q3 in the same vault, where the 2026-Q2 review already wrote Operations/reviews/2026-Q2-business-review/data/baseline.json. Lead with the trend versus last review, then the full rollup. The ledger has a stale row (no fresh entry this period) for trial-to-paid.",
+      "must": [
+        "opens with a TREND section comparing this period against the prior snapshot before the scorecard, naming which metrics improved, held, or regressed",
+        "marks the trial-to-paid metric stale and surfaces the gap instead of estimating a current value",
+        "keeps the SCORECARD complete with every metric and a source row pointing at the ledger",
+        "writes the by-area read across acquisition, conversion, retention, content, and pipeline with a cited deliverable path per area",
+        "leaves Memory/kpi-ledger.md unchanged and appends only a one-line Daily Activity entry for the review",
+        "keeps the narrative to exactly three wins and the do-next to exactly three measurable moves"
+      ],
+      "auto_checks": [
+        { "id": "has_sections", "type": "requires_sections", "sections": ["trend", "scorecard", "by-area", "narrative", "do-next"] },
+        { "id": "marks_stale", "type": "regex", "pattern": "stale", "flags": "i" },
+        { "id": "has_table", "type": "regex", "pattern": "\\|.*\\|.*\\|" },
+        { "id": "cites_evidence", "type": "min_citations", "min": 4 },
+        { "id": "logs_daily", "type": "appends_ledger" },
+        { "id": "enough_depth", "type": "min_words", "min": 450 },
+        { "id": "no_em_dash", "type": "no_em_dash" },
+        { "id": "no_banned", "type": "no_banned" }
+      ],
+      "dimensions": [
+        { "name": "honesty about misses", "desc": "the stale metric and any regression are stated plainly up top, with the trend versus last period leading rather than the wins" },
+        { "name": "evidence traceability", "desc": "the trend ties back to the prior baseline.json, scorecard rows trace to the ledger, and area movement cites deliverable paths" },
+        { "name": "rollup clarity", "desc": "trend then scorecard reads in a clean order, every metric present, the stale row visibly flagged not silently dropped" },
+        { "name": "decision usefulness", "desc": "the do-next moves respond to what the trend and misses revealed, each with a metric, target, and skill to run" },
+        { "name": "no invented numbers", "desc": "the stale metric is left unfilled and flagged; no current value is back-solved from the target or the prior period" }
+      ]
+    }
+  ]
+}

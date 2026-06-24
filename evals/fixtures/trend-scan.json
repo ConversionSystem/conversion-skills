@@ -1,0 +1,65 @@
+{
+  "skill": "trend-scan",
+  "cases": [
+    {
+      "id": "trend-scan-single-entity-30d",
+      "input": "Run the trend-scan skill on the topic \"Notion AI\" over the last 30 days, single mode, standalone with no client slug. Scan public communities, rank by engagement, and write the findings deliverable.",
+      "must": [
+        "scopes the scan to the requested 30-day window and says which platforms were scanned",
+        "ranks items by each platform's native engagement signal (upvotes, points, likes, stars, views) with the real metric recorded next to each",
+        "weaves in at least two verbatim community quotes, each attributed to a handle or username, platform, date, and link",
+        "clusters the same story across platforms into named themes rather than dumping a raw list of posts",
+        "ties each business implication back to the sources it rests on",
+        "stays draft-only and invents no quote, username, or engagement number"
+      ],
+      "auto_checks": [
+        { "id": "has_sections", "type": "requires_sections", "sections": ["Scope", "Top signals", "Themes", "Implications", "Sources"] },
+        { "id": "has_verbatim_quote", "type": "regex", "pattern": "[\"“][^\"“”]{15,}[\"”]", "flags": "" },
+        { "id": "names_window", "type": "regex", "pattern": "30[ -]?day|last 30 days|window 30", "flags": "i" },
+        { "id": "cites_sources", "type": "min_citations", "min": 6 },
+        { "id": "links_to_threads", "type": "min_links", "min": 4 },
+        { "id": "logs_ledger", "type": "appends_ledger" },
+        { "id": "no_em_dash", "type": "no_em_dash" },
+        { "id": "no_banned", "type": "no_banned" },
+        { "id": "no_placeholders", "type": "no_placeholders" }
+      ],
+      "dimensions": [
+        { "name": "source diversity", "desc": "signal is pulled from several distinct communities (Reddit, Hacker News, YouTube, X, GitHub) rather than leaning on one platform" },
+        { "name": "recency", "desc": "items sit inside the requested window, each carries a date, and anything older is labeled as context rather than passed off as current" },
+        { "name": "quote faithfulness", "desc": "quotes read as genuine verbatim community language and are fully attributed (handle, platform, date, link), never paraphrased and dressed up as a quote" },
+        { "name": "engagement ranking", "desc": "the loudest items lead, each with its real native metric, and ordering reflects actual signal rather than arbitrary placement" },
+        { "name": "synthesis over dump", "desc": "the output clusters posts into named themes with a pattern and an implication, instead of listing raw threads back to back" }
+      ]
+    },
+    {
+      "id": "trend-scan-comparison-vs",
+      "input": "Run the trend-scan skill in comparison mode on \"Linear vs Jira\" over the last 90 days, focus angle on reliability and pricing, standalone with no client slug. Produce the head-to-head findings deliverable.",
+      "must": [
+        "resolves each entity separately, then merges the two reads into a head-to-head with a per-dimension verdict",
+        "covers the requested reliability and pricing angles with community signal on each side",
+        "weaves in at least two verbatim attributed quotes, drawn from both sides of the comparison",
+        "ranks items by native engagement and records the real metric and link for each",
+        "gives concrete business implications, each tied to its sources",
+        "stays draft-only and invents no quote, username, or engagement number"
+      ],
+      "auto_checks": [
+        { "id": "has_sections", "type": "requires_sections", "sections": ["Scope", "Top signals", "Themes", "Comparison", "Implications", "Sources"] },
+        { "id": "has_verbatim_quote", "type": "regex", "pattern": "[\"“][^\"“”]{15,}[\"”]", "flags": "" },
+        { "id": "names_verdict", "type": "regex", "pattern": "verdict", "flags": "i" },
+        { "id": "cites_sources", "type": "min_citations", "min": 8 },
+        { "id": "links_to_threads", "type": "min_links", "min": 6 },
+        { "id": "logs_ledger", "type": "appends_ledger" },
+        { "id": "no_em_dash", "type": "no_em_dash" },
+        { "id": "no_banned", "type": "no_banned" },
+        { "id": "no_placeholders", "type": "no_placeholders" }
+      ],
+      "dimensions": [
+        { "name": "source diversity", "desc": "both entities draw signal from several distinct communities, not a single subreddit or one thread per side" },
+        { "name": "recency", "desc": "items fall inside the 90-day window, each dated, with older material flagged as context" },
+        { "name": "quote faithfulness", "desc": "quotes are genuine verbatim community language, fully attributed, and represent both sides of the head-to-head" },
+        { "name": "engagement ranking", "desc": "the loudest items per entity lead with their real native metrics, and the comparison reflects actual signal volume" },
+        { "name": "synthesis over dump", "desc": "the head-to-head reads as a merged judgment per dimension with a verdict, not two stacked raw lists" }
+      ]
+    }
+  ]
+}

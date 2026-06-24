@@ -1,0 +1,32 @@
+{
+  "skill": "seo-audit",
+  "cases": [
+    {
+      "id": "seo-audit-saas-homepage",
+      "input": "Run the seo-audit skill on https://example.com, a B2B SaaS marketing site, standalone with no vault. Produce the full audit.",
+      "must": [
+        "scores the site to a letter grade",
+        "separates quick wins from larger fixes",
+        "every finding cites the specific page, element, tag, or signal it rests on",
+        "records a baseline so a later re-audit can chart against it",
+        "uses no invented traffic, ranking, or volume numbers"
+      ],
+      "auto_checks": [
+        { "id": "has_grade", "type": "regex", "pattern": "\\bgrade\\b", "flags": "i" },
+        { "id": "quick_wins", "type": "requires_sections", "sections": ["quick win"] },
+        { "id": "cites_evidence", "type": "min_citations", "min": 5 },
+        { "id": "enough_depth", "type": "min_words", "min": 400 },
+        { "id": "no_em_dash", "type": "no_em_dash" },
+        { "id": "no_banned", "type": "no_banned" },
+        { "id": "no_placeholders", "type": "no_placeholders" }
+      ],
+      "dimensions": [
+        { "name": "specificity", "desc": "findings name the exact element or tag, not generic best-practice advice" },
+        { "name": "prioritization", "desc": "fixes are ranked by impact, the highest-leverage ones lead" },
+        { "name": "evidence", "desc": "each claim is traceable to something observable on the page" },
+        { "name": "actionability", "desc": "each fix is a concrete thing a person can do, not a platitude" },
+        { "name": "coverage", "desc": "the major technical SEO categories are addressed, not just a few easy ones" }
+      ]
+    }
+  ]
+}

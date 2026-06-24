@@ -27,4 +27,7 @@ echo "== bundled-engine smoke test =="
 python3 skills/business-review/scripts/rollup.py examples/solo-vault/Memory/kpi-ledger.md \
   | python3 -c "import sys,json; d=json.load(sys.stdin); assert d['metrics'], 'no metrics'; print(f\"  engine ok: {len(d['metrics'])} metrics from {d['rows']} rows\")"
 
+echo "== eval corpus =="
+python3 "$ROOT/scripts/eval.py" validate
+
 echo "== verify passed =="
