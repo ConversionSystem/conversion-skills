@@ -22,6 +22,9 @@ Turn the KPI ledger into a period scorecard that makes the compounding visible: 
 
 ## Process
 
+### Step 0 · GUARD (engine precondition and path)
+0. Resolve the engine by its skill-relative path, `skills/business-review/scripts/rollup.py`, anchored to where this SKILL.md lives · never assume the current working directory. Prefer this skill-relative script over any prior cached or copied engine, so a stale copy never runs silently. Before running it, check the precondition: Python 3 is available and the script file exists at that anchored path. If both hold, run the engine path. If either is missing, do not fail or guess · fall back to the documented prose Process (Phase 1 onward) and produce the same scorecard by hand. Either way, state in the output which path was taken (engine or prose).
+
 ### Phase 1 · LOAD
 1. Confirm the period with the user (e.g. `2026-05` for a month or `2026-Q2` for a quarter). Do not proceed until it is fixed; this date drives every output path.
 2. Read the entire `Memory/kpi-ledger.md`. Note every metric, its latest `current`, `target`, `source`, and `confidence`. Never skim · the rollup must trace to real rows.

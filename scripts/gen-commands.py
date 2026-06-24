@@ -36,7 +36,7 @@ GROUPS = [
         "mcp-builder", "agent-builder", "deep-research", "fact-checker", "humanizer", "file-organizer",
         "prompt-master", "process-interviewer", "decision-toolkit", "n8n", "n8n-prd-generator",
         "course-creator", "website-launch-kit", "frontend-slides", "trend-scan", "doubt-check", "skill-author",
-        "find-skill", "grill", "handoff"]),
+        "find-skill", "grill", "handoff", "decision-map"]),
 ]
 
 NOTES = {

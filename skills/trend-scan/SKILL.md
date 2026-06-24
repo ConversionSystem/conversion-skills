@@ -21,7 +21,7 @@ description: Research what people are actually saying about a topic, competitor,
 
 ## Process
 1. Resolve scope. Read `Company/profile.md`, `Company/competitors.md`, and `Company/strategy.md` for context. If a client slug is set, read `Clients/{slug}/` for the active client only and never a sibling. Confirm the entity, the window (default 30 days), and the mode (single or comparison).
-2. In comparison mode, resolve each entity separately first (canonical name, handles, subreddits, GitHub org, ticker or market where relevant), then run steps 3 to 6 once per entity before merging.
+2. In comparison mode, resolve each entity separately first (canonical name, handles, subreddits, GitHub org, ticker or market where relevant), then run steps 3 to 7 once per entity before merging.
 3. Check `_system/connectors.md`. If a community connector is registered (for example a higher-volume search or social API), use it. If not, run the zero-infra default: WebSearch and WebFetch scoped to each platform.
 4. Gather per platform, filtered to the window:
    - Reddit: WebSearch `site:reddit.com {entity} {window terms}`, fetch top threads, capture subreddit, upvotes, comment counts, top comments.
@@ -31,9 +31,10 @@ description: Research what people are actually saying about a topic, competitor,
    - GitHub: WebSearch issues, discussions, and repos, capture stars, issue volume, recency.
    - Prediction markets: WebSearch Polymarket, Kalshi, Manifold for any market tied to the entity, capture current odds and volume.
 5. Rank by engagement. Score each item on its platform's native signal (upvotes, points, reposts, likes, stars, view and comment signals, market volume). Normalize within platform, then surface the highest-signal items overall. Record the source URL and the metric for every item; never invent a number.
-6. Cluster the same story across platforms. Group items that describe the same event, complaint, launch, or claim into one theme even when they sit on different platforms. Name each cluster in plain language and note which platforms carried it and how loud each was.
-7. Synthesize. For each major theme, write what people are saying, weave in 2 or more verbatim community quotes with attribution (handle or username, platform, date, link), then state the pattern and the implication for the business. In comparison mode, merge the per-entity themes into a head-to-head with a short verdict per dimension.
-8. Write the deliverable. Create `Projects/trend-scan-{slug}-{date}/` (under the active client if a slug is set) and write `findings.md` with the sections below. Append one ledger row to `Memory/kpi-ledger.md`.
+6. Weight prediction markets as a distinct evidence class. When a topic has a live market (Polymarket, Kalshi, Manifold), treat the market odds and the traded volume as money-backed signal, a higher-weight evidence class than opinion, not just one more community item. Weight each market by its liquidity and volume: a thin, low-volume market is weak evidence and a deep, high-volume one is strong. For an ambiguous single-word or single-token topic, disambiguate by keyword before pulling markets so you do not match the wrong market. When you cite a market, state the odds, the traded volume, and the date, and never present a market price as a settled fact; it is a probability, mark it inferred.
+7. Cluster the same story across platforms. Group items that describe the same event, complaint, launch, or claim into one theme even when they sit on different platforms. Name each cluster in plain language and note which platforms carried it and how loud each was.
+8. Synthesize. For each major theme, write what people are saying, weave in 2 or more verbatim community quotes with attribution (handle or username, platform, date, link), then state the pattern and the implication for the business. In comparison mode, merge the per-entity themes into a head-to-head with a short verdict per dimension.
+9. Write the deliverable. Create `Projects/trend-scan-{slug}-{date}/` (under the active client if a slug is set) and write `findings.md` with the sections below. Append one ledger row to `Memory/kpi-ledger.md`.
 
 ## Outputs
 - `Projects/trend-scan-{slug}-{date}/findings.md` containing:
@@ -54,6 +55,7 @@ description: Research what people are actually saying about a topic, competitor,
 - Cite every claim with a source URL. Never invent a quote, a username, a metric, or an engagement number. If a metric is not visible, mark it "not shown" rather than guessing.
 - Quotes must be verbatim and attributed (handle, platform, date, link). Do not paraphrase a quote and present it as a quote.
 - Mark each item's confidence as confirmed, reported, inferred, or stale in line with what the source supports. Community engagement counts are reported, not confirmed.
+- A prediction market price is a probability, not a settled fact. Always cite the odds, the traded volume, and the date, weight the market by its liquidity and volume, and mark it inferred. Disambiguate an ambiguous single-word or single-token topic by keyword before pulling markets.
 - Respect the window. Drop items outside the requested N days, or label them clearly as older context.
 - Connectors are optional. If none are registered, run the zero-infra default and say so. Never block on a missing connector.
 
