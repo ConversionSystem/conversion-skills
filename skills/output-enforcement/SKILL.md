@@ -52,7 +52,16 @@ Hold a produced output to a written standard, brand, spec, or accessibility bar,
 - Provenance: if the output claims a metric, check it has a source. An unsourced metric is a fail.
 - The ledger is append-only. Never edit a prior row.
 
+## Output laws
+Apply these to every deliverable this skill checks, and to its own report. Each law names the failure it prevents.
+1. Cite as a link. Every citation is an inline `[name](url)` link. Prevents the bare or trailing raw URL dumped at the end with no context.
+2. Show the result, not the plumbing. Never narrate the tooling. Do not write "I searched" or "I ran the script". Prevents the reader paying attention to your process instead of your answer.
+3. Quote the source. When synthesizing research or voice, weave in at least two verbatim attributed quotes. Prevents unsupported paraphrase that no one can check.
+4. Integrate the evidence. No trailing raw evidence dump. Fold every fact into the sentence it supports. Prevents a wall of links or notes pasted under the real output.
+5. Degrade loud. When a required input or connector is missing, emit a visible status note that says what is missing and that the output is partial. Prevents silently shipping thin output that looks complete.
+
 ## References
 - `Company/brand.md`, `Library/styles/brand-voice.md`
 - `_system/rules`
 - `Projects/{slug}/brief.md` for project-specific specs
+- `references/definition-of-done.md` for the standing checklist every deliverable clears before it is called done

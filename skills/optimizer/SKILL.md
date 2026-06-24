@@ -29,6 +29,18 @@ Scheduled vault hygiene that audits structure, links, freshness, budgets, firewa
 3. Record baseline metrics for the report: file count, total lines, files over budget, stale count, dead-link count, orphan count, firewall flags.
 
 ### Phase 1 · Run all categories with judgment (each ships a concrete fix)
+
+**The nine audit frameworks (named, so each is checkable).** Every run sweeps all nine; a finding under any of them still ships a concrete fix (existing behavior, unchanged). Map them onto the categories below:
+- **Router quality (CLAUDE.md)** - does each router actually route (canonical homes named, no dead branches, no facts that belong in a leaf). Runs inside C1/C4.
+- **Wikilink and graph integrity** - broken links (target missing), orphans (no inbound links), missing entity links. Runs inside C2.
+- **Compression of bloated notes** - notes that have outgrown their budget or repeat themselves get a propose-summarize/split. Runs inside C4.
+- **Context-rot** - stale `reviewed:` dates past the threshold and facts that contradict the current ledger or world. Runs inside C3/C7.
+- **Memory size budgets** - root `CLAUDE.md`, folder routers, context docs, and `Memory/` files held to their line/token caps. Runs inside C4.
+- **Progressive disclosure** - detail sitting in a router that belongs in a leaf (and vice versa); push depth down, keep routers thin. Runs inside C1/C4.
+- **General hygiene** - frontmatter completeness, kebab-case/ISO naming, and placeholder leftovers (`TODO`, `{slug}`, `lorem`, empty sections). Runs inside C1/C6.
+- **Reflection and contradiction-merge** - surface conflicting facts across files and reconcile them by proposing a single canonical source, never auto-picking a winner. Runs inside C7.
+- **Architecture and discoverability plus firewall integrity** - canonical-home violations, undiscoverable files (no router path to them), and cross-client leakage. Runs inside C1/C5.
+
 4. **C5 FIREWALL (Agency · run FIRST as a trust check):** scan for cross-client references (a file under `Clients/{a}/` naming or wikilinking `Clients/{b}/`), client material living outside its own `Clients/{slug}/` workspace, any `confidential:true` content leaked into shared folders, and credentials/secrets sitting in `Company/stack/`. Fix = quarantine to `Inbox/` with a flagged note, set `confidential:true`, and propose moving secrets out of `Company/stack/`. Report these before everything else.
 5. **C1 Structure:** misplaced files (fact in the wrong canonical home per router), missing folder routers/profile folders, naming drift (non-kebab-case slugs, non-ISO dates), stale `Inbox/` items. Fix = move to canonical home, scaffold the missing router, rename to kebab-case/ISO, route aged Inbox items.
 6. **C2 Links:** dead wikilinks (target missing), orphan notes (no inbound links), missing entity links (a known entity mentioned but unlinked). Fix = repoint/remove dead links, propose a backlink or archive for orphans, insert the entity wikilink.
@@ -89,6 +101,7 @@ Scheduled vault hygiene that audits structure, links, freshness, budgets, firewa
 - [ ] No delete or move happened without a prior inbound-reference grep; targets with inbound links were downgraded to repoint or routed to `Inbox/`.
 - [ ] Only walked-and-approved fixes were applied; declined findings are recorded as declined, planned findings collected in the action list.
 - [ ] Nothing was published, sent, or deleted autonomously, and no prior `Memory/kpi-ledger.md` row was edited or reordered.
+- [ ] All nine named frameworks were swept (router quality, graph integrity, compression, context-rot, memory budgets, progressive disclosure, general hygiene, contradiction-merge, architecture/discoverability plus firewall), each finding still carrying a concrete fix.
 - [ ] The report `Operations/reviews/{date}-vault-audit.md` is `generated:true` with per-finding disposition, and an audit-trail entry under `_system/audit/` records budgets consumed.
 
 ## Rationalizations

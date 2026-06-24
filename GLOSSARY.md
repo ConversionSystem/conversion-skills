@@ -14,5 +14,12 @@ Canonical terms for Conversion Skills. Skills reference these, they do not redef
 - **Gate** · a CI check that fails the build: clean-room, budgets, secrets, firewall, brand, sections.
 - **Judge** · the reusable adversarial reviewer that tries to refute a claim before it ships.
 - **Fan-out** · an orchestrated skill that spawns specialists, merges their findings, and runs the judge.
+- **Progressive disclosure** · keep a `SKILL.md` short and push depth into references files loaded on demand.
+- **Information hierarchy** · the order of detail, in-skill step versus in-skill reference versus external reference.
+- **Completion criterion** · the observable condition that says a skill's job is done.
+- **Premature completion** · stopping before the completion criterion is met.
+- **Model-invoked versus user-invoked** · a skill Claude triggers on a matching task versus one a person types.
+- **Discipline sections** · Red flags, Verification, Rationalizations, required on heavy skills.
+- **Heavy skill** · a high-stakes skill the sections gate enforces.
 
 By Angel Castro · AI & Automation Lead · linkedin.com/in/anglcstr
