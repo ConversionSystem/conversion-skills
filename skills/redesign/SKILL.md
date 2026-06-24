@@ -58,3 +58,4 @@ Audit a page or screen as it stands today, then propose a stronger direction wit
 - `Library/styles/brand-voice.md`
 - `Company/icp.md`
 - `Memory/kpi-ledger.md`
+- `/a11y-audit` - run it on the redesigned page for a WCAG 2.1 AA accessibility pass; contrast and focus states are design decisions.

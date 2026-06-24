@@ -3,7 +3,7 @@
 # Red flags (self-detectors), Verification (observable exit criteria), Rationalizations (excuse to reality).
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"; cd "$ROOT"
-HEAVY="site-audit seo-audit ads-audit business-review pipeline-review churn-watch free-audit optimizer operator client win-loss portfolio-watch crm-mining"
+HEAVY="site-audit seo-audit ads-audit business-review pipeline-review churn-watch free-audit optimizer operator client win-loss portfolio-watch crm-mining copy-optimize monitor grill hiring-signals a11y-audit"
 REQUIRED=("## Red flags" "## Verification" "## Rationalizations")
 fail=0
 for slug in $HEAVY; do

@@ -10,19 +10,19 @@ GROUPS = [
         "setup", "memory", "operator", "optimizer", "team", "client", "connect"]),
     ("Daily operations", [
         "daily", "weekly-review", "business-review", "pipeline-update",
-        "meeting-capture", "project-update", "content-plan", "sop-create", "exec-dashboard"]),
+        "meeting-capture", "project-update", "content-plan", "sop-create", "exec-dashboard", "monitor"]),
     ("SEO and visibility", [
-        "site-audit", "web-vitals", "seo-audit", "seo-optimize", "seo-schema", "seo-programmatic", "seo-compare", "geo-optimize",
+        "site-audit", "web-vitals", "a11y-audit", "seo-audit", "seo-optimize", "seo-schema", "seo-programmatic", "seo-compare", "geo-optimize",
         "seo-content", "seo-technical", "seo-sitemap", "seo-hreflang", "seo-images", "seo-plan", "seo-competitor-pages"]),
     ("Paid ads", [
         "ads-audit", "ads-plan", "ads-google", "ads-meta", "ads-linkedin", "ads-tiktok", "ads-microsoft",
         "ads-youtube", "ads-budget", "ads-creative", "ads-competitor", "ads-landing"]),
     ("Sales and pipeline", [
         "lead-research", "lead-qualify", "lead-enrich", "crm-mining", "pipeline-review", "win-loss",
-        "linkedin-writer", "linkedin-post-engagers", "sales-rep-analyzer", "free-audit"]),
+        "linkedin-writer", "linkedin-post-engagers", "sales-rep-analyzer", "free-audit", "hiring-signals"]),
     ("Content and publishing", [
         "email-sequence", "email-personalize", "social-post", "newsletter", "blog-post",
-        "landing-page", "repurpose", "wp-publish", "wp-refresh"]),
+        "landing-page", "repurpose", "wp-publish", "wp-refresh", "copy-optimize"]),
     ("YouTube", [
         "youtube-ideation", "youtube-brief", "youtube-outline", "youtube-scripting",
         "youtube-packaging", "title-generation", "youtube-thumbnail-generate"]),
@@ -35,7 +35,8 @@ GROUPS = [
     ("Build and utilities", [
         "mcp-builder", "agent-builder", "deep-research", "fact-checker", "humanizer", "file-organizer",
         "prompt-master", "process-interviewer", "decision-toolkit", "n8n", "n8n-prd-generator",
-        "course-creator", "website-launch-kit", "frontend-slides", "trend-scan", "doubt-check", "skill-author"]),
+        "course-creator", "website-launch-kit", "frontend-slides", "trend-scan", "doubt-check", "skill-author",
+        "find-skill", "grill"]),
 ]
 
 NOTES = {

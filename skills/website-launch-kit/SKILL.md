@@ -55,3 +55,4 @@ Turns a website go-live into a tracked, repeatable checklist so nothing ships br
 - `_system/connectors.md`
 - `Library/styles/brand-voice.md`
 - `Memory/kpi-ledger.md`
+- `/a11y-audit` - run it on each launched page for a WCAG 2.1 AA accessibility pass before go-live.

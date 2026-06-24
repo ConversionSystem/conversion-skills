@@ -67,3 +67,4 @@ Drafts one conversion-focused landing page around a single offer and one primary
 - `references/structure.md` - landing-page section skeletons (lead-gen, sales/checkout, webinar/event, free-audit) and headline patterns.
 - `Operations/case-studies/`, `Memory/kpi-ledger.md`, `Clients/{slug}/goals.md` - proof and the conversion baseline.
 - `_system/connectors.md` - OPTIONAL analytics/CMS connectors (real conversion benchmarks, draft push); zero-infra default needs none.
+- `/a11y-audit` - run it on the page for a WCAG 2.1 AA accessibility pass; accessibility lifts conversion and lowers ADA and SEO risk.
