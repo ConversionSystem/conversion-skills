@@ -1,6 +1,6 @@
 # Conversion Skills
 
-**CONVERSION / SKILLS** · by Conversion System. Our toolkit: 104 Claude skills that run your growth and remember what moved. It powers Conversion OS, or runs on its own.
+**CONVERSION / SKILLS** · by Conversion System. Our toolkit: 112 Claude skills that run your growth and remember what moved. It powers Conversion OS, or runs on its own.
 
 Every business runs on context. Who you are, what you sell, who you serve, what you decided, what moved the number. Most of it evaporates. Conversion Skills keeps it. Plain markdown in your own folder, versioned with git. The AI is the runtime. The files are the database. Git is the journal. No platform. No lock-in.
 
@@ -17,7 +17,7 @@ Every business runs on context. Who you are, what you sell, who you serve, what 
 5. **Team OS.** Shared knowledge, role scoping, permissions.
 6. **Client OS.** Firewalled per-client delivery for agencies.
 7. **Connector layer.** Read and write the OS across tools, within scope, logged.
-8. **Workflow Library.** 9 operating routines and 88 delivery skills across ads, SEO, sales, content, YouTube, creative, and design, all logging what moved.
+8. **Workflow Library.** 9 operating routines and 96 delivery skills across ads, SEO, sales, content, YouTube, creative, and design, all logging what moved.
 
 ## The ledger is the moat
 `Memory/kpi-ledger.md` is append-only. Every run adds one row: date, metric, baseline, current, target, source, confidence, note. Nothing is erased. The monthly review rolls the whole ledger against a baseline and shows the trend. Cancelling loses the record. That is the point.
@@ -30,7 +30,7 @@ Every business runs on context. Who you are, what you sell, who you serve, what 
 ## Guides
 Start with `docs/`.
 - [docs/getting-started.md](docs/getting-started.md) · what you need, how to install, your first 10 minutes.
-- [docs/commands.md](docs/commands.md) · all 104 commands, what each does, what it needs.
+- [docs/commands.md](docs/commands.md) · all 112 commands, what each does, what it needs.
 - [docs/daily-use.md](docs/daily-use.md) · the operating rhythm, with worked examples.
 - [docs/setup-guide.md](docs/setup-guide.md) · the three profiles.
 - [docs/connectors.md](docs/connectors.md) · connect tools and run the operator. Optional.
@@ -41,7 +41,7 @@ Start with `docs/`.
 
 ## Repo
 ```
-skills/      104 skills (7 modules, 9 workflows, 88 delivery)
+skills/      112 skills (7 modules, 9 workflows, 96 delivery)
 templates/   21 document templates Setup copies in
 examples/    3 seeded vaults: solo, team, agency
 scripts/     6 gates: clean-room, budgets, secrets, firewall, brand, sections
@@ -52,6 +52,6 @@ BRAND.md     the Conversion System brand, enforced by scripts/check-brand.sh
 ```
 
 ## Receipts
-104 skills. 6 gates green on every push. 0 em-dashes. 0 cross-client leaks (a planted leak was caught and removed in test V4).
+112 skills. 6 gates green on every push. 0 em-dashes. 0 cross-client leaks (a planted leak was caught and removed in test V4).
 
 By Angel Castro · AI & Automation Lead · linkedin.com/in/anglcstr
